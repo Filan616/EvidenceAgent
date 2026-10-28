@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "normal": {
+    "observation_call_id": "call_00_yjbPLrfOvuDimh2WMAnV1134",
+    "observation_ok": true,
+    "observation": {
+      "ok": true,
+      "results": [
+        {
+          "doc_id": "D03",
+          "title": "正式员工远程办公",
+          "version_date": "2026-03-01",
+          "score": 0.661291,
+          "snippet": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。"
+        },
+        {
+          "doc_id": "D04",
+          "title": "试用期远程办公",
+          "version_date": "2026-04-01",
+          "score": 0.371246,
+          "snippet": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。"
+        }
+      ]
+    },
+    "next_call_id": "call_00_L2nIoitNIvht6l4pq6do2398",
+    "action": "read_doc",
+    "parameters": {
+      "doc_id": "D03"
+    }
+  },
+  "changed": {
+    "observation_call_id": "call_00_m1yLyj3bnxC73tZ3pamv9303",
+    "observation_ok": false,
+    "observation": {
+      "ok": false,
+      "error_type": "INJECTED_FAILURE",
+      "message": "检索工具故障（测试注入）",
+      "retryable": true
+    },
+    "next_call_id": "call_00_JOLBBBhSUkHvHa4jKwav2646",
+    "action": "search_docs",
+    "parameters": {
+      "query": "远程办公 正式员工 每周最多几天",
+      "top_k": 5
+    }
+  },
+  "reason": "实际 observation 与后续工具决策不同",
+  "normal_trace": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\dynamic_normal_16350d6da87942c7a2f050629409bea9\\trace.json",
+  "changed_trace": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\dynamic_fault_e15e91aff5fa483f95df445553d820b2\\trace.json"
+}

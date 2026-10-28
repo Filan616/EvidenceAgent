@@ -1,0 +1,895 @@
+{
+  "run_id": "67df1e912a35474c9e996b65764f9a9e",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:47:06.508088+00:00",
+  "input": {
+    "question": "正式员工一周在家上班最多能申请几天？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "C04",
+    "evaluation_batch": "20261028T114641Z_ace5d168",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "903c39888898041e89f62f4a397675603c7167ff043488a0cc413525f4c0de27",
+  "schema_hash": "1900f26da5090c9ee5aeb2dcd2a9c4cdff91272461a7c9504589005f136a7cc0",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_JvZHR5TSXSNVZIuoPGWt3140",
+      "action": "search_docs",
+      "parameters": {
+        "query": "正式员工 远程办公 每周 申请 天数 上限",
+        "top_k": 5,
+        "reason": "查找远程办公额度规则",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"query\": \"正式员工 远程办公 每周 申请 天数 上限\", \"top_k\": 5, \"reason\": \"查找远程办公额度规则\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D03",
+            "title": "正式员工远程办公",
+            "version_date": "2026-03-01",
+            "score": 0.645095,
+            "snippet": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D04",
+            "title": "试用期远程办公",
+            "version_date": "2026-04-01",
+            "score": 0.395952,
+            "snippet": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D03,D04",
+      "decision_summary": "查找远程办公额度规则",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0006878000131109729,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_FQD1DAvo4Ioq9abUUt311998",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D03",
+        "reason": "读取正式员工远程办公规则全文",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"doc_id\": \"D03\", \"reason\": \"读取正式员工远程办公规则全文\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "doc_id": "D03",
+        "title": "正式员工远程办公",
+        "version_date": "2026-03-01",
+        "scope": [
+          "regular"
+        ],
+        "content": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D03-R1",
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "<=",
+            "constraint_type": "MAX",
+            "value": 2,
+            "unit": "days",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "supersedes": [],
+            "evidence": "正式员工每周最多可以申请2天远程办公。",
+            "facets": [
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D03",
+      "decision_summary": "读取正式员工远程办公规则全文",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00016039999900385737,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 3,
+      "round": 2,
+      "call_id": "call_01_A7foOrkybRdKctvBkfVT1754",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D04",
+        "reason": "检查试用期规则是否影响范围判断",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"doc_id\": \"D04\", \"reason\": \"检查试用期规则是否影响范围判断\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "doc_id": "D04",
+        "title": "试用期远程办公",
+        "version_date": "2026-04-01",
+        "scope": [
+          "probation"
+        ],
+        "content": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D04-R1",
+            "rule_group": "remote_work",
+            "scope": [
+              "probation"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "=",
+            "constraint_type": "EXACT",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "reference_event": null,
+            "period": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "supersedes": [],
+            "evidence": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "facets": [
+              "procedure",
+              "requirements",
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D04",
+      "decision_summary": "检查试用期规则是否影响范围判断",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 9.849999332800508e-05,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 4,
+      "round": 3,
+      "call_id": "call_00_6NkKC3qd2wutkxl0dcUY2542",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "COMPLETED",
+        "answer": "正式员工每周最多可以申请2天远程办公（在家上班）。该规则自2026-01-01起生效，无其他附加条件；试用期的审批规则不适用于正式员工。",
+        "citations": [
+          {
+            "doc_id": "D03",
+            "quote": "正式员工每周最多可以申请2天远程办公。"
+          }
+        ],
+        "claims": [
+          {
+            "statement": "正式员工每周最多可以申请2天远程办公。",
+            "evidence_doc_id": "D03",
+            "evidence_quote": "正式员工每周最多可以申请2天远程办公。",
+            "rule_id": "D03-R1",
+            "scope": [
+              "regular"
+            ],
+            "constraint_type": "MAX",
+            "operator": "<=",
+            "value": 2,
+            "unit": "days",
+            "period": "每周",
+            "reference_event": null,
+            "conditions": [],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "gaps": [],
+        "conflicts": [],
+        "reason": "已读取正式员工远程办公规则并据此回答每周上限。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"status\": \"COMPLETED\", \"answer\": \"正式员工每周最多可以申请2天远程办公（在家上班）。该规则自2026-01-01起生效，无其他附加条件；试用期的审批规则不适用于正式员工。\", \"citations\": [{\"doc_id\": \"D03\", \"quote\": \"正式员工每周最多可以申请2天远程办公。\"}], \"claims\": [{\"statement\": \"正式员工每周最多可以申请2天远程办公。\", \"evidence_doc_id\": \"D03\", \"evidence_quote\": \"正式员工每周最多可以申请2天远程办公。\", \"rule_id\": \"D03-R1\", \"scope\": [\"regular\"], \"constraint_type\": \"MAX\", \"operator\": \"<=\", \"value\": 2, \"unit\": \"days\", \"period\": \"每周\", \"reference_event\": null, \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"gaps\": [], \"conflicts\": [], \"reason\": \"已读取正式员工远程办公规则并据此回答每周上限。\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "COMPLETED",
+          "answer": "正式员工每周最多可以申请2天远程办公。",
+          "claims": [
+            {
+              "statement": "正式员工每周最多可以申请2天远程办公。",
+              "evidence_doc_id": "D03",
+              "evidence_quote": "正式员工每周最多可以申请2天远程办公。",
+              "rule_id": "D03-R1",
+              "scope": [
+                "regular"
+              ],
+              "constraint_type": "MAX",
+              "operator": "<=",
+              "value": 2,
+              "unit": "days",
+              "period": "每周",
+              "reference_event": null,
+              "conditions": [],
+              "effective_from": "2026-01-01",
+              "effective_to": null
+            }
+          ],
+          "citations": [
+            {
+              "doc_id": "D03",
+              "quote": "正式员工每周最多可以申请2天远程办公。"
+            }
+          ],
+          "gaps": [],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C04_67df1e912a35474c9e996b65764f9a9e\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": true,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：COMPLETED",
+      "decision_summary": "已读取正式员工远程办公规则并据此回答每周上限。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0004545999981928617,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.3241245999961393,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.3880847999971593,
+      "model": "deepseek-flash",
+      "tool_call_count": 2
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.9178354000032414,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "constraint_type": "MAX",
+          "facet": "limit"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": ""
+    }
+  ],
+  "counts": {
+    "model_calls": 3,
+    "requested": 4,
+    "attempted": 4,
+    "executed": 4,
+    "skipped": 0
+  },
+  "final": {
+    "status": "COMPLETED",
+    "answer": "正式员工每周最多可以申请2天远程办公。",
+    "claims": [
+      {
+        "statement": "正式员工每周最多可以申请2天远程办公。",
+        "evidence_doc_id": "D03",
+        "evidence_quote": "正式员工每周最多可以申请2天远程办公。",
+        "rule_id": "D03-R1",
+        "scope": [
+          "regular"
+        ],
+        "constraint_type": "MAX",
+        "operator": "<=",
+        "value": 2,
+        "unit": "days",
+        "period": "每周",
+        "reference_event": null,
+        "conditions": [],
+        "effective_from": "2026-01-01",
+        "effective_to": null
+      }
+    ],
+    "citations": [
+      {
+        "doc_id": "D03",
+        "quote": "正式员工每周最多可以申请2天远程办公。"
+      }
+    ],
+    "gaps": [],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C04_67df1e912a35474c9e996b65764f9a9e\\trace.json"
+  },
+  "elapsed_seconds": 4.634221,
+  "finished_at": "2026-10-28T11:47:11.139832+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  },
+  "contract_attempts": [
+    {
+      "raw": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      },
+      "normalized": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周在家上班最多能申请几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    }
+  ],
+  "protected_constraints": [
+    {
+      "field": "as_of",
+      "value": "2026-10-28",
+      "source": "runtime",
+      "evidence": "--as-of",
+      "protected": true
+    },
+    {
+      "field": "rule_group",
+      "value": "remote_work",
+      "source": "user",
+      "evidence": "正式员工一周在家上班最多能申请几天？",
+      "protected": true
+    },
+    {
+      "field": "scope",
+      "value": [
+        "regular"
+      ],
+      "source": "user",
+      "evidence": "正式员工一周在家上班最多能申请几天？",
+      "protected": true
+    },
+    {
+      "field": "period",
+      "value": "每周",
+      "source": "user",
+      "evidence": "一周",
+      "protected": true
+    },
+    {
+      "field": "constraint_type",
+      "value": "MAX",
+      "source": "user",
+      "evidence": "正式员工一周在家上班最多能申请几天？",
+      "protected": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "mode": "mock",
+  "description": "预设回放，仅验证执行器；不证明模型能力",
+  "responses": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "h1",
+          "type": "function",
+          "function": {
+            "name": "search_docs",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"probation\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [], \"facet\": \"all\", \"constraint_type\": null}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}, \"query\": \"试用期远程办公\", \"top_k\": 5}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "h2",
+          "type": "function",
+          "function": {
+            "name": "read_doc",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"doc_id\": \"D04\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "h3",
+          "type": "function",
+          "function": {
+            "name": "submit_answer",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"status\": \"COMPLETED\", \"answer\": \"此自由文本不得直接作为最终答案。\", \"claims\": [{\"statement\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"evidence_doc_id\": \"D04\", \"evidence_quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"rule_id\": \"D04-R1\", \"scope\": [\"probation\"], \"constraint_type\": \"EXACT\", \"operator\": \"=\", \"value\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"unit\": \"text\", \"period\": null, \"reference_event\": null, \"conditions\": [\"主管审批\", \"不自动适用正式员工的固定额度\"], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"citations\": [{\"doc_id\": \"D04\", \"quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\"}], \"gaps\": [], \"conflicts\": []}"
+          }
+        }
+      ]
+    }
+  ]
+}

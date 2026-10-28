@@ -1,0 +1,11 @@
+{
+  "status": "FAILED",
+  "answer": "工具异常导致任务失败。",
+  "claims": [],
+  "citations": [],
+  "gaps": [
+    "已观察到工具异常，未获得可接受的恢复结果。"
+  ],
+  "conflicts": [],
+  "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\always_trace.json"
+}

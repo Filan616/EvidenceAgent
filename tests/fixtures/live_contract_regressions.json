@@ -1,0 +1,203 @@
+[
+  {
+    "case": "C04",
+    "fixture_kind": "offline_regression_from_live_arguments",
+    "source_trace": "examples/generated/live/C04_6fbef98e2feb45589a34e49cf62a5f74/trace.json",
+    "question": "正式员工一周在家上班最多能申请几天？",
+    "history": [],
+    "first_arguments": {
+      "query": "正式员工 远程办公 在家上班 每周 申请 天数 上限",
+      "top_k": 8,
+      "reason": "查找远程办公按员工类型规定的每周额度上限",
+      "question_contract": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [
+              "正式员工"
+            ],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      }
+    }
+  },
+  {
+    "case": "C05",
+    "fixture_kind": "offline_regression_from_live_arguments",
+    "source_trace": "examples/generated/live/C05_0844d231df75418e99d93ba8efb190c7/trace.json",
+    "question": "那试用期呢？",
+    "history": [
+      {
+        "role": "user",
+        "content": "正式员工远程办公有什么规定？"
+      },
+      {
+        "role": "assistant",
+        "content": "上一轮回答仅作话题上下文，本轮须重新读取制度。"
+      }
+    ],
+    "first_arguments": {
+      "query": "试用期 远程办公 规定 额度 申请",
+      "top_k": 8,
+      "reason": "查找试用期员工远程办公额度或申请规则",
+      "question_contract": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "probation"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": null,
+            "conditions": [
+              "试用期员工"
+            ],
+            "constraint_type": null,
+            "facet": "all"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": "追问试用期员工的远程办公规定，范围明确为 probation"
+      }
+    }
+  },
+  {
+    "case": "T04",
+    "fixture_kind": "offline_regression_from_live_arguments",
+    "source_trace": "examples/generated/live/T04_95b320f89227426da9e3b402222c0da0/trace.json",
+    "question": "差旅费用最晚什么时候报销？",
+    "history": [],
+    "first_arguments": {
+      "query": "差旅费用报销期限 最晚何时报销",
+      "top_k": 8,
+      "reason": "查找差旅报销期限规定",
+      "question_contract": {
+        "requirements": [
+          {
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "regular",
+              "probation",
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": "差旅费用发生/出差结束",
+            "period": null,
+            "conditions": [],
+            "constraint_type": "DEADLINE",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": true,
+        "clarification": "用户未说明员工类别（正式/试用期），若期限按员工类别不同需澄清；目前先检索全部范围。",
+        "revision_reason": "首次检索"
+      }
+    }
+  },
+  {
+    "case": "T06",
+    "fixture_kind": "offline_regression_from_live_arguments",
+    "source_trace": "examples/generated/live/T06_9e9d74170f4c402f9686792bf7eee660/trace.json",
+    "question": "正式员工一周最多远程办公几天？",
+    "history": [],
+    "first_arguments": {
+      "query": "正式员工远程办公 每周天数上限",
+      "top_k": 5,
+      "reason": "查找正式员工远程办公额度规定",
+      "question_contract": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "week",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      }
+    }
+  },
+  {
+    "case": "dynamic_normal",
+    "fixture_kind": "offline_regression_from_live_arguments",
+    "source_trace": "examples/generated/live/dynamic_normal_6f335cdf2a4844c9b550fd0ee9cb2dbf/trace.json",
+    "question": "正式员工一周最多远程办公几天？",
+    "history": [],
+    "first_arguments": {
+      "query": "正式员工 远程办公 每周 天数 上限",
+      "top_k": 8,
+      "reason": "查找按员工类型规定的远程办公额度",
+      "question_contract": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "week",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      }
+    }
+  },
+  {
+    "case": "C06B",
+    "fixture_kind": "offline_regression_from_live_arguments",
+    "source_trace": "examples/generated/live/C06B_1da401d79a6742ebaf72cebb3e7ccead/trace.json",
+    "question": "正式员工一周最多远程办公几天？",
+    "history": [],
+    "first_arguments": {
+      "query": "正式员工 远程办公 一周最多几天",
+      "top_k": 5,
+      "reason": "查找远程办公额度规定",
+      "question_contract": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "week",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      }
+    }
+  }
+]

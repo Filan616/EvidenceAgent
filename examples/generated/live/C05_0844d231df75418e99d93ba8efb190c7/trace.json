@@ -1,0 +1,701 @@
+{
+  "run_id": "0844d231df75418e99d93ba8efb190c7",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:13:15.416233+00:00",
+  "input": {
+    "question": "那试用期呢？",
+    "history": [
+      {
+        "role": "user",
+        "content": "正式员工远程办公有什么规定？"
+      },
+      {
+        "role": "assistant",
+        "content": "上一轮回答仅作话题上下文，本轮须重新读取制度。"
+      }
+    ]
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "C05",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "bfbf6449c3c080c381c0af600c10d810cb1ec674860b446f3fd79aa081f3cdf6",
+  "schema_hash": "3e41290c913106869df34ce2547671e6de25a8372e2b6c427bf47954444f155b",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_Mzq3WwlFpf7OEmQ1u9lL1342",
+      "action": "search_docs",
+      "parameters": {
+        "query": "试用期 远程办公 规定 额度 申请",
+        "top_k": 8,
+        "reason": "查找试用期员工远程办公额度或申请规则",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "probation"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": null,
+              "conditions": [
+                "试用期员工"
+              ],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "追问试用期员工的远程办公规定，范围明确为 probation"
+        }
+      },
+      "raw_arguments": "{\"query\": \"试用期 远程办公 规定 额度 申请\", \"top_k\": 8, \"reason\": \"查找试用期员工远程办公额度或申请规则\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"probation\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [\"试用期员工\"], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"追问试用期员工的远程办公规定，范围明确为 probation\"}}",
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D04",
+            "title": "试用期远程办公",
+            "version_date": "2026-04-01",
+            "score": 0.530057,
+            "snippet": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D03",
+            "title": "正式员工远程办公",
+            "version_date": "2026-03-01",
+            "score": 0.329041,
+            "snippet": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D04,D03",
+      "decision_summary": "查找试用期员工远程办公额度或申请规则",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0009189999982481822,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_RRwmrTuz43QjKRxgudjd1017",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D04",
+        "reason": "读取试用期远程办公完整规定",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "probation"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": null,
+              "conditions": [
+                "试用期员工"
+              ],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "读取候选文档 D04 以获取试用期远程办公原文"
+        }
+      },
+      "raw_arguments": "{\"doc_id\": \"D04\", \"reason\": \"读取试用期远程办公完整规定\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"probation\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [\"试用期员工\"], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"读取候选文档 D04 以获取试用期远程办公原文\"}}",
+      "observation": {
+        "ok": true,
+        "doc_id": "D04",
+        "title": "试用期远程办公",
+        "version_date": "2026-04-01",
+        "scope": [
+          "probation"
+        ],
+        "content": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D04-R1",
+            "rule_group": "remote_work",
+            "scope": [
+              "probation"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "=",
+            "constraint_type": "EXACT",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "reference_event": null,
+            "period": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "supersedes": [],
+            "evidence": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "facets": [
+              "procedure",
+              "requirements",
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D04",
+      "decision_summary": "读取试用期远程办公完整规定",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0010698000114643946,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 3,
+      "round": 3,
+      "call_id": "call_00_Mc8lDdf2lWPRxVfwivyt9171",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "COMPLETED",
+        "answer": "试用期员工申请远程办公需主管审批，且不自动适用正式员工的固定额度（即正式员工每周最多2天的额度不自动套用到试用期）。",
+        "citations": [
+          {
+            "doc_id": "D04",
+            "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+          }
+        ],
+        "claims": [
+          {
+            "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "evidence_doc_id": "D04",
+            "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "rule_id": "D04-R1",
+            "scope": [
+              "probation"
+            ],
+            "constraint_type": "EXACT",
+            "operator": "=",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "period": null,
+            "reference_event": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "gaps": [],
+        "conflicts": [],
+        "reason": "已读取试用期远程办公制度并据此回答其申请与额度规则。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "probation"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": null,
+              "conditions": [
+                "试用期员工"
+              ],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "追问试用期员工远程办公规定，范围明确为 probation"
+        }
+      },
+      "raw_arguments": "{\"status\": \"COMPLETED\", \"answer\": \"试用期员工申请远程办公需主管审批，且不自动适用正式员工的固定额度（即正式员工每周最多2天的额度不自动套用到试用期）。\", \"citations\": [{\"doc_id\": \"D04\", \"quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\"}], \"claims\": [{\"statement\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"evidence_doc_id\": \"D04\", \"evidence_quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"rule_id\": \"D04-R1\", \"scope\": [\"probation\"], \"constraint_type\": \"EXACT\", \"operator\": \"=\", \"value\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"unit\": \"text\", \"period\": null, \"reference_event\": null, \"conditions\": [\"主管审批\", \"不自动适用正式员工的固定额度\"], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"gaps\": [], \"conflicts\": [], \"reason\": \"已读取试用期远程办公制度并据此回答其申请与额度规则。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"probation\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [\"试用期员工\"], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"追问试用期员工远程办公规定，范围明确为 probation\"}}",
+      "observation": {
+        "ok": false,
+        "error_type": "VALIDATION_ERROR",
+        "message": "终稿未通过校验，请根据缺口自行查证或修正",
+        "retryable": false,
+        "details": [
+          "问题必要条件未覆盖"
+        ],
+        "related_doc_ids": [],
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts": true
+        }
+      },
+      "result_summary": "VALIDATION_ERROR: 终稿未通过校验，请根据缺口自行查证或修正",
+      "decision_summary": "已读取试用期远程办公制度并据此回答其申请与额度规则。",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.001217900004121475,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 4,
+      "round": 4,
+      "call_id": "call_00_8NAz9XAhvab7f1bpmYMJ9819",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程办公 规定 员工 超额 特殊情形",
+        "top_k": 8,
+        "reason": "补充检索远程办公相关制度，确认是否有其他覆盖试用期的条款",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "probation",
+                "regular",
+                "all_employees"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": null,
+              "conditions": [],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "扩大检索范围以确认远程办公规则组下是否存在其他与试用期相关或全体适用的条款"
+        }
+      },
+      "raw_arguments": "{\"query\": \"远程办公 规定 员工 超额 特殊情形\", \"top_k\": 8, \"reason\": \"补充检索远程办公相关制度，确认是否有其他覆盖试用期的条款\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"probation\", \"regular\", \"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"扩大检索范围以确认远程办公规则组下是否存在其他与试用期相关或全体适用的条款\"}}",
+      "observation": {
+        "ok": false,
+        "error_type": "QUESTION_CONTRACT_ERROR",
+        "message": "问题解释未通过校验",
+        "retryable": false,
+        "details": [
+          "question_contract 必须保留问题明确的员工范围，不能扩大或替换",
+          "同次运行不允许缩小或替换既有问题约束；需澄清后新建运行"
+        ]
+      },
+      "result_summary": "QUESTION_CONTRACT_ERROR: 问题解释未通过校验",
+      "decision_summary": "补充检索远程办公相关制度，确认是否有其他覆盖试用期的条款",
+      "ok": false,
+      "executed": false,
+      "elapsed_seconds": 0.0007344000041484833,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 5,
+      "round": 5,
+      "call_id": "call_00_GOjnMI3QjaI9QTFsWLGW4662",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程办公 规定 员工 试用期 额度 申请",
+        "top_k": 8,
+        "reason": "保持试用期范围补充检索远程办公制度",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"远程办公 规定 员工 试用期 额度 申请\", \"top_k\": 8, \"reason\": \"保持试用期范围补充检索远程办公制度\", \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D04",
+            "title": "试用期远程办公",
+            "version_date": "2026-04-01",
+            "score": 0.537044,
+            "snippet": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D03",
+            "title": "正式员工远程办公",
+            "version_date": "2026-03-01",
+            "score": 0.341249,
+            "snippet": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D04,D03",
+      "decision_summary": "保持试用期范围补充检索远程办公制度",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0005586999905062839,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 6,
+      "round": 6,
+      "call_id": "call_00_hZGgYRY4qX3Yid2HS8J93260",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D03",
+        "reason": "核实正式员工远程办公额度，以说明试用期不自动适用的参照额度",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"doc_id\": \"D03\", \"reason\": \"核实正式员工远程办公额度，以说明试用期不自动适用的参照额度\", \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "doc_id": "D03",
+        "title": "正式员工远程办公",
+        "version_date": "2026-03-01",
+        "scope": [
+          "regular"
+        ],
+        "content": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D03-R1",
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "<=",
+            "constraint_type": "MAX",
+            "value": 2,
+            "unit": "days",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "supersedes": [],
+            "evidence": "正式员工每周最多可以申请2天远程办公。",
+            "facets": [
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D03",
+      "decision_summary": "核实正式员工远程办公额度，以说明试用期不自动适用的参照额度",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00019839999731630087,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 7,
+      "round": 7,
+      "call_id": "call_00_TRwmjm7CNwGkRB1iLTMt7949",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "COMPLETED",
+        "answer": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。作为对照，正式员工的固定额度是每周最多申请2天；试用期员工不自动套用这一额度，需按主管审批结果申请。",
+        "citations": [
+          {
+            "doc_id": "D04",
+            "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+          },
+          {
+            "doc_id": "D03",
+            "quote": "正式员工每周最多可以申请2天远程办公。"
+          }
+        ],
+        "claims": [
+          {
+            "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "evidence_doc_id": "D04",
+            "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "rule_id": "D04-R1",
+            "scope": [
+              "probation"
+            ],
+            "constraint_type": "EXACT",
+            "operator": "=",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "period": null,
+            "reference_event": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          },
+          {
+            "statement": "正式员工每周最多可以申请2天远程办公。",
+            "evidence_doc_id": "D03",
+            "evidence_quote": "正式员工每周最多可以申请2天远程办公。",
+            "rule_id": "D03-R1",
+            "scope": [
+              "regular"
+            ],
+            "constraint_type": "MAX",
+            "operator": "<=",
+            "value": 2,
+            "unit": "days",
+            "period": "每周",
+            "reference_event": null,
+            "conditions": [],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "gaps": [],
+        "conflicts": [],
+        "reason": "已读取试用期与正式员工远程办公两份制度并据此作答。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"status\": \"COMPLETED\", \"answer\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。作为对照，正式员工的固定额度是每周最多申请2天；试用期员工不自动套用这一额度，需按主管审批结果申请。\", \"citations\": [{\"doc_id\": \"D04\", \"quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\"}, {\"doc_id\": \"D03\", \"quote\": \"正式员工每周最多可以申请2天远程办公。\"}], \"claims\": [{\"statement\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"evidence_doc_id\": \"D04\", \"evidence_quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"rule_id\": \"D04-R1\", \"scope\": [\"probation\"], \"constraint_type\": \"EXACT\", \"operator\": \"=\", \"value\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"unit\": \"text\", \"period\": null, \"reference_event\": null, \"conditions\": [\"主管审批\", \"不自动适用正式员工的固定额度\"], \"effective_from\": \"2026-01-01\", \"effective_to\": null}, {\"statement\": \"正式员工每周最多可以申请2天远程办公。\", \"evidence_doc_id\": \"D03\", \"evidence_quote\": \"正式员工每周最多可以申请2天远程办公。\", \"rule_id\": \"D03-R1\", \"scope\": [\"regular\"], \"constraint_type\": \"MAX\", \"operator\": \"<=\", \"value\": 2, \"unit\": \"days\", \"period\": \"每周\", \"reference_event\": null, \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"gaps\": [], \"conflicts\": [], \"reason\": \"已读取试用期与正式员工远程办公两份制度并据此作答。\", \"question_contract\": null}",
+      "observation": {
+        "ok": false,
+        "error_type": "VALIDATION_ERROR",
+        "message": "终稿未通过校验，请根据缺口自行查证或修正",
+        "retryable": false,
+        "details": [
+          "声明不适用于问题的规则、范围或时间",
+          "问题必要条件未覆盖"
+        ],
+        "related_doc_ids": [],
+        "checks": {
+          "facts": false,
+          "coverage": false,
+          "conflicts": true
+        }
+      },
+      "result_summary": "VALIDATION_ERROR: 终稿未通过校验，请根据缺口自行查证或修正",
+      "decision_summary": "已读取试用期与正式员工远程办公两份制度并据此作答。",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.0018093999970005825,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 8,
+      "round": 8,
+      "call_id": "call_00_WyYZTC0N6IvWDz5VxctO9957",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "COMPLETED",
+        "answer": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+        "citations": [
+          {
+            "doc_id": "D04",
+            "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+          }
+        ],
+        "claims": [
+          {
+            "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "evidence_doc_id": "D04",
+            "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "rule_id": "D04-R1",
+            "scope": [
+              "probation"
+            ],
+            "constraint_type": "EXACT",
+            "operator": "=",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "period": null,
+            "reference_event": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "gaps": [],
+        "conflicts": [],
+        "reason": "已读取试用期远程办公制度并仅就试用期范围内的规则作答。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"status\": \"COMPLETED\", \"answer\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"citations\": [{\"doc_id\": \"D04\", \"quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\"}], \"claims\": [{\"statement\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"evidence_doc_id\": \"D04\", \"evidence_quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"rule_id\": \"D04-R1\", \"scope\": [\"probation\"], \"constraint_type\": \"EXACT\", \"operator\": \"=\", \"value\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"unit\": \"text\", \"period\": null, \"reference_event\": null, \"conditions\": [\"主管审批\", \"不自动适用正式员工的固定额度\"], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"gaps\": [], \"conflicts\": [], \"reason\": \"已读取试用期远程办公制度并仅就试用期范围内的规则作答。\", \"question_contract\": null}",
+      "observation": {
+        "ok": false,
+        "error_type": "VALIDATION_ERROR",
+        "message": "终稿未通过校验，请根据缺口自行查证或修正",
+        "retryable": false,
+        "details": [
+          "问题必要条件未覆盖"
+        ],
+        "related_doc_ids": [],
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts": true
+        }
+      },
+      "result_summary": "VALIDATION_ERROR: 终稿未通过校验，请根据缺口自行查证或修正",
+      "decision_summary": "已读取试用期远程办公制度并仅就试用期范围内的规则作答。",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.001051500003086403,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.3918747000134317,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.1771398999990197,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.9348699999973178,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 4,
+      "ok": true,
+      "elapsed_seconds": 1.368064599999343,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 5,
+      "ok": true,
+      "elapsed_seconds": 1.0458385000092676,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 6,
+      "ok": true,
+      "elapsed_seconds": 1.4687724999967031,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 7,
+      "ok": true,
+      "elapsed_seconds": 2.301086599996779,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 8,
+      "ok": true,
+      "elapsed_seconds": 1.7662640000053216,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "probation"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "试用期员工"
+          ],
+          "constraint_type": null,
+          "facet": "all"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "追问试用期员工的远程办公规定，范围明确为 probation"
+    },
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "probation"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "试用期员工"
+          ],
+          "constraint_type": null,
+          "facet": "all"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "读取候选文档 D04 以获取试用期远程办公原文"
+    },
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "probation"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "试用期员工"
+          ],
+          "constraint_type": null,
+          "facet": "all"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "追问试用期员工远程办公规定，范围明确为 probation"
+    }
+  ],
+  "counts": {
+    "model_calls": 8,
+    "requested": 8,
+    "attempted": 8,
+    "executed": 7,
+    "skipped": 0
+  },
+  "final": {
+    "status": "INCOMPLETE",
+    "answer": "任务未完成。",
+    "claims": [],
+    "citations": [],
+    "gaps": [
+      "MAX_STEPS：模型调用轮次耗尽"
+    ],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C05_0844d231df75418e99d93ba8efb190c7\\trace.json"
+  },
+  "elapsed_seconds": 12.468305,
+  "finished_at": "2026-10-28T11:13:27.878745+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  }
+}

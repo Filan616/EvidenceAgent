@@ -1,0 +1,107 @@
+[
+  {
+    "case_id": "C01",
+    "mode": "mock",
+    "exit_code": 0,
+    "status": "COMPLETED",
+    "expected_status": "COMPLETED",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\normal_trace.json",
+    "output": "examples\\generated\\mock\\normal_output.json",
+    "actions": [
+      "search_docs",
+      "read_doc",
+      "submit_answer"
+    ]
+  },
+  {
+    "case_id": "C02",
+    "mode": "mock",
+    "exit_code": 0,
+    "status": "NEEDS_CLARIFICATION",
+    "expected_status": "NEEDS_CLARIFICATION",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\conflict_trace.json",
+    "output": "examples\\generated\\mock\\conflict_output.json",
+    "actions": [
+      "search_docs",
+      "read_doc",
+      "read_doc",
+      "submit_answer"
+    ]
+  },
+  {
+    "case_id": "C03",
+    "mode": "mock",
+    "exit_code": 0,
+    "status": "INSUFFICIENT_EVIDENCE",
+    "expected_status": "INSUFFICIENT_EVIDENCE",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\missing_trace.json",
+    "output": "examples\\generated\\mock\\missing_output.json",
+    "actions": [
+      "search_docs",
+      "submit_answer"
+    ]
+  },
+  {
+    "case_id": "C04",
+    "mode": "mock",
+    "exit_code": 0,
+    "status": "COMPLETED",
+    "expected_status": "COMPLETED",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\similar_trace.json",
+    "output": "examples\\generated\\mock\\similar_output.json",
+    "actions": [
+      "search_docs",
+      "read_doc",
+      "submit_answer"
+    ]
+  },
+  {
+    "case_id": "C05",
+    "mode": "mock",
+    "exit_code": 0,
+    "status": "COMPLETED",
+    "expected_status": "COMPLETED",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\context_trace.json",
+    "output": "examples\\generated\\mock\\context_output.json",
+    "actions": [
+      "search_docs",
+      "read_doc",
+      "submit_answer"
+    ]
+  },
+  {
+    "case_id": "C06",
+    "mode": "mock",
+    "exit_code": 0,
+    "status": "COMPLETED",
+    "expected_status": "COMPLETED",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\failure_trace.json",
+    "output": "examples\\generated\\mock\\failure_output.json",
+    "actions": [
+      "search_docs",
+      "search_docs",
+      "read_doc",
+      "submit_answer"
+    ]
+  },
+  {
+    "case_id": "C06B",
+    "mode": "mock",
+    "exit_code": 1,
+    "status": "FAILED",
+    "expected_status": "FAILED",
+    "passed": true,
+    "trace": "examples\\generated\\mock\\always_trace.json",
+    "output": "examples\\generated\\mock\\always_output.json",
+    "actions": [
+      "search_docs",
+      "submit_answer"
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETED",
+  "answer": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+  "claims": [
+    {
+      "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+      "evidence_doc_id": "D04",
+      "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+      "rule_id": "D04-R1",
+      "scope": [
+        "probation"
+      ],
+      "constraint_type": "EXACT",
+      "operator": "=",
+      "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+      "unit": "text",
+      "period": null,
+      "reference_event": null,
+      "conditions": [
+        "主管审批",
+        "不自动适用正式员工的固定额度"
+      ],
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    }
+  ],
+  "citations": [
+    {
+      "doc_id": "D04",
+      "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+    }
+  ],
+  "gaps": [],
+  "conflicts": [],
+  "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\context_trace.json"
+}

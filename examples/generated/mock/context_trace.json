@@ -1,0 +1,341 @@
+{
+  "run_id": "f7b0e3b454c04bd2bb5037e3b86dfd50",
+  "mode": "mock",
+  "model": "mock",
+  "requested_model": "mock",
+  "started_at": "2026-10-28T10:24:31.907256+00:00",
+  "input": {
+    "question": "那试用期呢？",
+    "history": [
+      {
+        "role": "user",
+        "content": "正式员工远程办公有什么规定？"
+      },
+      {
+        "role": "assistant",
+        "content": "上一轮回答仅作话题上下文，本轮须重新读取制度。"
+      }
+    ]
+  },
+  "config": {
+    "provider_host": "mock",
+    "strict_requested": true,
+    "parallel_constraint_requested": null,
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "bfbf6449c3c080c381c0af600c10d810cb1ec674860b446f3fd79aa081f3cdf6",
+  "schema_hash": "28696d47c2505b3fac76de53cad3905bb3255cd1bee8df590709e86c7dcc5b21",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "h1",
+      "action": "search_docs",
+      "parameters": {
+        "reason": "离线测试动作说明",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "probation"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": null,
+              "conditions": [],
+              "facet": "all",
+              "constraint_type": null
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        },
+        "query": "试用期远程办公",
+        "top_k": 5
+      },
+      "raw_arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"probation\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [], \"facet\": \"all\", \"constraint_type\": null}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}, \"query\": \"试用期远程办公\", \"top_k\": 5}",
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D04",
+            "title": "试用期远程办公",
+            "version_date": "2026-04-01",
+            "score": 0.553061,
+            "snippet": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D03",
+            "title": "正式员工远程办公",
+            "version_date": "2026-03-01",
+            "score": 0.286835,
+            "snippet": "正式员工每周最多可以申请2天远程办公。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D04,D03",
+      "decision_summary": "离线测试动作说明",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00027069999487139285,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "h2",
+      "action": "read_doc",
+      "parameters": {
+        "reason": "离线测试动作说明",
+        "question_contract": null,
+        "doc_id": "D04"
+      },
+      "raw_arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"doc_id\": \"D04\"}",
+      "observation": {
+        "ok": true,
+        "doc_id": "D04",
+        "title": "试用期远程办公",
+        "version_date": "2026-04-01",
+        "scope": [
+          "probation"
+        ],
+        "content": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D04-R1",
+            "rule_group": "remote_work",
+            "scope": [
+              "probation"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "=",
+            "constraint_type": "EXACT",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "reference_event": null,
+            "period": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "supersedes": [],
+            "evidence": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "facets": [
+              "procedure",
+              "requirements",
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D04",
+      "decision_summary": "离线测试动作说明",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00010609999299049377,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 3,
+      "round": 3,
+      "call_id": "h3",
+      "action": "submit_answer",
+      "parameters": {
+        "reason": "离线测试动作说明",
+        "question_contract": null,
+        "status": "COMPLETED",
+        "answer": "此自由文本不得直接作为最终答案。",
+        "claims": [
+          {
+            "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "evidence_doc_id": "D04",
+            "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "rule_id": "D04-R1",
+            "scope": [
+              "probation"
+            ],
+            "constraint_type": "EXACT",
+            "operator": "=",
+            "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+            "unit": "text",
+            "period": null,
+            "reference_event": null,
+            "conditions": [
+              "主管审批",
+              "不自动适用正式员工的固定额度"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "citations": [
+          {
+            "doc_id": "D04",
+            "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+          }
+        ],
+        "gaps": [],
+        "conflicts": []
+      },
+      "raw_arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"status\": \"COMPLETED\", \"answer\": \"此自由文本不得直接作为最终答案。\", \"claims\": [{\"statement\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"evidence_doc_id\": \"D04\", \"evidence_quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"rule_id\": \"D04-R1\", \"scope\": [\"probation\"], \"constraint_type\": \"EXACT\", \"operator\": \"=\", \"value\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\", \"unit\": \"text\", \"period\": null, \"reference_event\": null, \"conditions\": [\"主管审批\", \"不自动适用正式员工的固定额度\"], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"citations\": [{\"doc_id\": \"D04\", \"quote\": \"试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。\"}], \"gaps\": [], \"conflicts\": []}",
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "COMPLETED",
+          "answer": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+          "claims": [
+            {
+              "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+              "evidence_doc_id": "D04",
+              "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+              "rule_id": "D04-R1",
+              "scope": [
+                "probation"
+              ],
+              "constraint_type": "EXACT",
+              "operator": "=",
+              "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+              "unit": "text",
+              "period": null,
+              "reference_event": null,
+              "conditions": [
+                "主管审批",
+                "不自动适用正式员工的固定额度"
+              ],
+              "effective_from": "2026-01-01",
+              "effective_to": null
+            }
+          ],
+          "citations": [
+            {
+              "doc_id": "D04",
+              "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+            }
+          ],
+          "gaps": [],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\context_trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": true,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：COMPLETED",
+      "decision_summary": "离线测试动作说明",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0003412999940337613,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 2.4299995857290924e-05,
+      "model": "mock",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.3699987903237343e-05,
+      "model": "mock",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.6599995433352888e-05,
+      "model": "mock",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "probation"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": null,
+          "conditions": [],
+          "facet": "all",
+          "constraint_type": null
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": ""
+    }
+  ],
+  "counts": {
+    "model_calls": 3,
+    "requested": 3,
+    "attempted": 3,
+    "executed": 3,
+    "skipped": 0
+  },
+  "final": {
+    "status": "COMPLETED",
+    "answer": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+    "claims": [
+      {
+        "statement": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+        "evidence_doc_id": "D04",
+        "evidence_quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+        "rule_id": "D04-R1",
+        "scope": [
+          "probation"
+        ],
+        "constraint_type": "EXACT",
+        "operator": "=",
+        "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+        "unit": "text",
+        "period": null,
+        "reference_event": null,
+        "conditions": [
+          "主管审批",
+          "不自动适用正式员工的固定额度"
+        ],
+        "effective_from": "2026-01-01",
+        "effective_to": null
+      }
+    ],
+    "citations": [
+      {
+        "doc_id": "D04",
+        "quote": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。"
+      }
+    ],
+    "gaps": [],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\context_trace.json"
+  },
+  "elapsed_seconds": 0.003227,
+  "finished_at": "2026-10-28T10:24:31.908266+00:00",
+  "capabilities": {
+    "native_tool_calling": "mock_only",
+    "strict_schema": "mock_only",
+    "parallel_constraint": "mock_only"
+  }
+}

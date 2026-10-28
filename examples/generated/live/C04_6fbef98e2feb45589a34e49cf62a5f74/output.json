@@ -1,0 +1,11 @@
+{
+  "status": "INCOMPLETE",
+  "answer": "任务未完成。",
+  "claims": [],
+  "citations": [],
+  "gaps": [
+    "MAX_STEPS：模型调用轮次耗尽"
+  ],
+  "conflicts": [],
+  "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C04_6fbef98e2feb45589a34e49cf62a5f74\\trace.json"
+}

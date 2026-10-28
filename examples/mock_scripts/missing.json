@@ -1,0 +1,34 @@
+{
+  "mode": "mock",
+  "description": "预设回放，仅验证执行器；不证明模型能力",
+  "responses": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "m1",
+          "type": "function",
+          "function": {
+            "name": "search_docs",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"unknown\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": null, \"conditions\": [], \"facet\": \"all\", \"constraint_type\": null}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}, \"query\": \"公司今年利润\", \"top_k\": 5}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "m2",
+          "type": "function",
+          "function": {
+            "name": "submit_answer",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"status\": \"INSUFFICIENT_EVIDENCE\", \"answer\": \"此自由文本不得直接作为最终答案。\", \"claims\": [], \"citations\": [], \"gaps\": [\"缺少适用依据\"], \"conflicts\": []}"
+          }
+        }
+      ]
+    }
+  ]
+}

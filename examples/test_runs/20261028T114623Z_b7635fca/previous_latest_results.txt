@@ -1,0 +1,8 @@
+command: D:\Learning\EvidenceAgent\.venv\Scripts\python.exe -m pytest -q
+started_at: 2026-10-28T11:04:23.104038+00:00
+finished_at: 2026-10-28T11:04:26.392892+00:00
+exit_code: 0
+
+.......................................................................s [ 56%]
+sssssssssssss..........................................                  [100%]
+113 passed, 14 skipped in 2.07s

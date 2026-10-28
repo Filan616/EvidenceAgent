@@ -1,0 +1,1032 @@
+{
+  "run_id": "c1ac1a6fe7ed4c56b8de99fe15763116",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:47:25.378438+00:00",
+  "input": {
+    "question": "正式员工一周最多远程办公几天？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "C06B",
+    "evaluation_batch": "20261028T114641Z_ace5d168",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": "search_docs:always"
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "09cef727626596f2aa0d279b74c38163ade51db119c97749f04b54a451673d3a",
+  "schema_hash": "1900f26da5090c9ee5aeb2dcd2a9c4cdff91272461a7c9504589005f136a7cc0",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_ShVSs7zO4cEm94IppzZD7329",
+      "action": "search_docs",
+      "parameters": {
+        "query": "正式员工 远程办公 每周 天数 上限",
+        "top_k": 8,
+        "reason": "查找远程办公额度的相关规定",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"query\": \"正式员工 远程办公 每周 天数 上限\", \"top_k\": 8, \"reason\": \"查找远程办公额度的相关规定\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": false,
+        "error_type": "INJECTED_FAILURE",
+        "message": "检索工具故障（测试注入）",
+        "retryable": true
+      },
+      "result_summary": "INJECTED_FAILURE: 检索工具故障（测试注入）",
+      "decision_summary": "查找远程办公额度的相关规定",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.0005050000036135316,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_9WceqlJbLyynhjHa3ltj0754",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程办公 一周 最多 天 正式员工",
+        "top_k": 8,
+        "reason": "检索工具故障后重试同一检索",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"远程办公 一周 最多 天 正式员工\", \"top_k\": 8, \"reason\": \"检索工具故障后重试同一检索\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": false,
+        "error_type": "INJECTED_FAILURE",
+        "message": "检索工具故障（测试注入）",
+        "retryable": true
+      },
+      "result_summary": "INJECTED_FAILURE: 检索工具故障（测试注入）",
+      "decision_summary": "检索工具故障后重试同一检索",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.0002310999989276752,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 3,
+      "round": 3,
+      "call_id": "call_00_BuuZMkAXWPvrlZiehA6m4303",
+      "action": "search_docs",
+      "parameters": {
+        "query": "remote work policy weekly limit regular employees",
+        "top_k": 8,
+        "reason": "再次重试，改用不同检索表述",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"remote work policy weekly limit regular employees\", \"top_k\": 8, \"reason\": \"再次重试，改用不同检索表述\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": false,
+        "error_type": "INJECTED_FAILURE",
+        "message": "检索工具故障（测试注入）",
+        "retryable": true
+      },
+      "result_summary": "INJECTED_FAILURE: 检索工具故障（测试注入）",
+      "decision_summary": "再次重试，改用不同检索表述",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.0004222999996272847,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 4,
+      "round": 4,
+      "call_id": "call_00_N6xpmSTvNlPdAQidDZYk6176",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程办公额度",
+        "top_k": 5,
+        "reason": "第四次尝试检索远程办公规则",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"远程办公额度\", \"top_k\": 5, \"reason\": \"第四次尝试检索远程办公规则\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": false,
+        "error_type": "INJECTED_FAILURE",
+        "message": "检索工具故障（测试注入）",
+        "retryable": true
+      },
+      "result_summary": "INJECTED_FAILURE: 检索工具故障（测试注入）",
+      "decision_summary": "第四次尝试检索远程办公规则",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.00014150000060908496,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 5,
+      "round": 5,
+      "call_id": "call_00_D30Wp88GgCCaKaRcVOqQ1982",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "FAILED",
+        "answer": "检索工具连续多次返回故障错误（INJECTED_FAILURE），未能获取任何文档，因此无法回答\"正式员工一周最多远程办公几天\"。这属于工具故障，不代表资料不存在；请稍后重试。",
+        "citations": [],
+        "claims": [],
+        "gaps": [
+          "检索工具多次故障，未能读取任何远程办公规则文档"
+        ],
+        "conflicts": [],
+        "reason": "检索工具连续4次故障，无任何可引用证据。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"status\": \"FAILED\", \"answer\": \"检索工具连续多次返回故障错误（INJECTED_FAILURE），未能获取任何文档，因此无法回答\\\"正式员工一周最多远程办公几天\\\"。这属于工具故障，不代表资料不存在；请稍后重试。\", \"citations\": [], \"claims\": [], \"gaps\": [\"检索工具多次故障，未能读取任何远程办公规则文档\"], \"conflicts\": [], \"reason\": \"检索工具连续4次故障，无任何可引用证据。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "FAILED",
+          "answer": "工具异常导致任务失败。",
+          "claims": [],
+          "citations": [],
+          "gaps": [
+            "已观察到工具异常，未获得可接受的恢复结果。"
+          ],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C06B_c1ac1a6fe7ed4c56b8de99fe15763116\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：FAILED",
+      "decision_summary": "检索工具连续4次故障，无任何可引用证据。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0007831999973859638,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.3584974999976112,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 0.9263171999918995,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.0928331000031903,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 4,
+      "ok": true,
+      "elapsed_seconds": 0.9943969999876572,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 5,
+      "ok": true,
+      "elapsed_seconds": 1.680879699997604,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "constraint_type": "MAX",
+          "facet": "limit"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": ""
+    }
+  ],
+  "counts": {
+    "model_calls": 5,
+    "requested": 5,
+    "attempted": 5,
+    "executed": 5,
+    "skipped": 0
+  },
+  "final": {
+    "status": "FAILED",
+    "answer": "工具异常导致任务失败。",
+    "claims": [],
+    "citations": [],
+    "gaps": [
+      "已观察到工具异常，未获得可接受的恢复结果。"
+    ],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C06B_c1ac1a6fe7ed4c56b8de99fe15763116\\trace.json"
+  },
+  "elapsed_seconds": 6.058221,
+  "finished_at": "2026-10-28T11:47:31.433873+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  },
+  "contract_attempts": [
+    {
+      "raw": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      },
+      "normalized": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    },
+    {
+      "raw": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      },
+      "normalized": {
+        "requirements": [
+          {
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "constraint_type": "MAX",
+            "facet": "limit"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": ""
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "remote_work",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "regular"
+          ],
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每周",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "一周"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "MAX",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "正式员工一周最多远程办公几天？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "limit",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    }
+  ],
+  "protected_constraints": [
+    {
+      "field": "as_of",
+      "value": "2026-10-28",
+      "source": "runtime",
+      "evidence": "--as-of",
+      "protected": true
+    },
+    {
+      "field": "rule_group",
+      "value": "remote_work",
+      "source": "user",
+      "evidence": "正式员工一周最多远程办公几天？",
+      "protected": true
+    },
+    {
+      "field": "scope",
+      "value": [
+        "regular"
+      ],
+      "source": "user",
+      "evidence": "正式员工一周最多远程办公几天？",
+      "protected": true
+    },
+    {
+      "field": "period",
+      "value": "每周",
+      "source": "user",
+      "evidence": "一周",
+      "protected": true
+    },
+    {
+      "field": "constraint_type",
+      "value": "MAX",
+      "source": "user",
+      "evidence": "正式员工一周最多远程办公几天？",
+      "protected": true
+    }
+  ]
+}

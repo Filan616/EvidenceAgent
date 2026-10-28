@@ -1,0 +1,7 @@
+command: D:\Learning\EvidenceAgent\.venv\Scripts\python.exe -m pytest -q --run-live tests/test_live.py
+started_at: 2026-10-28T11:46:41.979678+00:00
+finished_at: 2026-10-28T11:48:19.324866+00:00
+exit_code: 0
+
+..............                                                           [100%]
+14 passed in 96.89s (0:01:36)

@@ -1,0 +1,1070 @@
+{
+  "run_id": "df30d7b2ac8f4c86bce59eb48eb42186",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:47:50.703029+00:00",
+  "input": {
+    "question": "差旅费用最晚什么时候报销？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "T04",
+    "evaluation_batch": "20261028T114641Z_ace5d168",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "dde305baaccfe046e541a29f222b83d2037253a42531967260f2bb987169bb03",
+  "prompt_hash": "a086b6cd924b10f01f442f07d7f055624659bf09ea4c8830bde84309852321a7",
+  "schema_hash": "1900f26da5090c9ee5aeb2dcd2a9c4cdff91272461a7c9504589005f136a7cc0",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_WZZdw5RZj1PZpdPF1sEu1577",
+      "action": "search_docs",
+      "parameters": {
+        "query": "差旅费用报销期限 最晚什么时候报销",
+        "top_k": 8,
+        "reason": "查找差旅报销期限的唯一规定",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "travel_reimbursement",
+              "scope": [
+                "all_employees"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": "差旅结束后",
+              "period": null,
+              "conditions": [],
+              "constraint_type": "DEADLINE",
+              "facet": "all"
+            }
+          ],
+          "ambiguous": true,
+          "clarification": "员工类别未明确，若规则按员工类型不同需澄清；起算事件假定为差旅结束后",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"query\": \"差旅费用报销期限 最晚什么时候报销\", \"top_k\": 8, \"reason\": \"查找差旅报销期限的唯一规定\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"travel_reimbursement\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": \"差旅结束后\", \"period\": null, \"conditions\": [], \"constraint_type\": \"DEADLINE\", \"facet\": \"all\"}], \"ambiguous\": true, \"clarification\": \"员工类别未明确，若规则按员工类型不同需澄清；起算事件假定为差旅结束后\", \"revision_reason\": \"\"}}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "travel_reimbursement",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "差旅费用最晚什么时候报销？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": "差旅结束后",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "DEADLINE",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D01",
+            "title": "差旅报销制度 A",
+            "version_date": "2026-01-01",
+            "score": 0.173078,
+            "snippet": "员工应在差旅结束后30天内提交报销申请。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D02",
+            "title": "差旅报销制度 B",
+            "version_date": "2026-02-01",
+            "score": 0.173078,
+            "snippet": "员工应在差旅结束后30天内提交报销申请。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D06",
+            "title": "报销票据要求",
+            "version_date": "2026-06-01",
+            "score": 0.130641,
+            "snippet": "员工办理差旅报销需提交有效票据。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D01,D02,D06",
+      "decision_summary": "查找差旅报销期限的唯一规定",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0004030999989481643,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_Q5sPHpYkovDW7u03fLTA0761",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D01",
+        "reason": "读取差旅报销制度A全文，确认期限、范围与生效时间",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"doc_id\": \"D01\", \"reason\": \"读取差旅报销制度A全文，确认期限、范围与生效时间\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "travel_reimbursement",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "差旅费用最晚什么时候报销？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": "差旅结束后",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "DEADLINE",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "doc_id": "D01",
+        "title": "差旅报销制度 A",
+        "version_date": "2026-01-01",
+        "scope": [
+          "all_employees"
+        ],
+        "content": "员工应在差旅结束后30天内提交报销申请。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D01-R1",
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "all_employees"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "<=",
+            "constraint_type": "DEADLINE",
+            "value": 30,
+            "unit": "days",
+            "reference_event": "差旅结束后",
+            "period": null,
+            "conditions": [],
+            "supersedes": [],
+            "evidence": "员工应在差旅结束后30天内提交报销申请。",
+            "facets": [
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D01",
+      "decision_summary": "读取差旅报销制度A全文，确认期限、范围与生效时间",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00045489998592529446,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 3,
+      "round": 2,
+      "call_id": "call_01_gD3eV3a3vmCE8ApBJq2R3005",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D02",
+        "reason": "读取差旅报销制度B全文，检查是否与A冲突或覆盖",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"doc_id\": \"D02\", \"reason\": \"读取差旅报销制度B全文，检查是否与A冲突或覆盖\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "travel_reimbursement",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "差旅费用最晚什么时候报销？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": "差旅结束后",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "DEADLINE",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "doc_id": "D02",
+        "title": "差旅报销制度 B",
+        "version_date": "2026-02-01",
+        "scope": [
+          "all_employees"
+        ],
+        "content": "员工应在差旅结束后30天内提交报销申请。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D02-R1",
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "all_employees"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "<=",
+            "constraint_type": "DEADLINE",
+            "value": 30,
+            "unit": "days",
+            "reference_event": "差旅结束后",
+            "period": null,
+            "conditions": [],
+            "supersedes": [],
+            "evidence": "员工应在差旅结束后30天内提交报销申请。",
+            "facets": [
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D02",
+      "decision_summary": "读取差旅报销制度B全文，检查是否与A冲突或覆盖",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0003171999996993691,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 4,
+      "round": 3,
+      "call_id": "call_00_9xMWJ1OU5XDZOgSCg28d1874",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "COMPLETED",
+        "answer": "差旅费用最晚应在差旅结束后30天内提交报销申请。该规定适用于全体员工（正式员工与试用期员工一致），D01 与 D02 两份制度的表述完全相同，结论不因员工类别不同而变化。",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "quote": "员工应在差旅结束后30天内提交报销申请。"
+          },
+          {
+            "doc_id": "D02",
+            "quote": "员工应在差旅结束后30天内提交报销申请。"
+          }
+        ],
+        "claims": [
+          {
+            "statement": "员工应在差旅结束后30天内提交报销申请。",
+            "evidence_doc_id": "D01",
+            "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+            "rule_id": "D01-R1",
+            "scope": [
+              "all_employees"
+            ],
+            "constraint_type": "DEADLINE",
+            "operator": "<=",
+            "value": 30,
+            "unit": "days",
+            "period": null,
+            "reference_event": "差旅结束后",
+            "conditions": [],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          },
+          {
+            "statement": "员工应在差旅结束后30天内提交报销申请。",
+            "evidence_doc_id": "D02",
+            "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+            "rule_id": "D02-R1",
+            "scope": [
+              "all_employees"
+            ],
+            "constraint_type": "DEADLINE",
+            "operator": "<=",
+            "value": 30,
+            "unit": "days",
+            "period": null,
+            "reference_event": "差旅结束后",
+            "conditions": [],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "gaps": [],
+        "conflicts": [],
+        "reason": "读取D01与D02两份差旅报销制度，期限规定一致且覆盖全体员工，据此作答。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "travel_reimbursement",
+              "scope": [
+                "all_employees"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": "差旅结束后",
+              "period": null,
+              "conditions": [],
+              "constraint_type": "DEADLINE",
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "已读规则覆盖全体员工且两份制度结论一致，员工类别歧义解除"
+        }
+      },
+      "raw_arguments": "{\"status\": \"COMPLETED\", \"answer\": \"差旅费用最晚应在差旅结束后30天内提交报销申请。该规定适用于全体员工（正式员工与试用期员工一致），D01 与 D02 两份制度的表述完全相同，结论不因员工类别不同而变化。\", \"citations\": [{\"doc_id\": \"D01\", \"quote\": \"员工应在差旅结束后30天内提交报销申请。\"}, {\"doc_id\": \"D02\", \"quote\": \"员工应在差旅结束后30天内提交报销申请。\"}], \"claims\": [{\"statement\": \"员工应在差旅结束后30天内提交报销申请。\", \"evidence_doc_id\": \"D01\", \"evidence_quote\": \"员工应在差旅结束后30天内提交报销申请。\", \"rule_id\": \"D01-R1\", \"scope\": [\"all_employees\"], \"constraint_type\": \"DEADLINE\", \"operator\": \"<=\", \"value\": 30, \"unit\": \"days\", \"period\": null, \"reference_event\": \"差旅结束后\", \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}, {\"statement\": \"员工应在差旅结束后30天内提交报销申请。\", \"evidence_doc_id\": \"D02\", \"evidence_quote\": \"员工应在差旅结束后30天内提交报销申请。\", \"rule_id\": \"D02-R1\", \"scope\": [\"all_employees\"], \"constraint_type\": \"DEADLINE\", \"operator\": \"<=\", \"value\": 30, \"unit\": \"days\", \"period\": null, \"reference_event\": \"差旅结束后\", \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"gaps\": [], \"conflicts\": [], \"reason\": \"读取D01与D02两份差旅报销制度，期限规定一致且覆盖全体员工，据此作答。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"travel_reimbursement\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": \"差旅结束后\", \"period\": null, \"conditions\": [], \"constraint_type\": \"DEADLINE\", \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"已读规则覆盖全体员工且两份制度结论一致，员工类别歧义解除\"}}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "travel_reimbursement",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "差旅费用最晚什么时候报销？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": "差旅结束后",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "DEADLINE",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "COMPLETED",
+          "answer": "员工应在差旅结束后30天内提交报销申请。员工应在差旅结束后30天内提交报销申请。",
+          "claims": [
+            {
+              "statement": "员工应在差旅结束后30天内提交报销申请。",
+              "evidence_doc_id": "D01",
+              "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+              "rule_id": "D01-R1",
+              "scope": [
+                "all_employees"
+              ],
+              "constraint_type": "DEADLINE",
+              "operator": "<=",
+              "value": 30,
+              "unit": "days",
+              "period": null,
+              "reference_event": "差旅结束后",
+              "conditions": [],
+              "effective_from": "2026-01-01",
+              "effective_to": null
+            },
+            {
+              "statement": "员工应在差旅结束后30天内提交报销申请。",
+              "evidence_doc_id": "D02",
+              "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+              "rule_id": "D02-R1",
+              "scope": [
+                "all_employees"
+              ],
+              "constraint_type": "DEADLINE",
+              "operator": "<=",
+              "value": 30,
+              "unit": "days",
+              "period": null,
+              "reference_event": "差旅结束后",
+              "conditions": [],
+              "effective_from": "2026-01-01",
+              "effective_to": null
+            }
+          ],
+          "citations": [
+            {
+              "doc_id": "D01",
+              "quote": "员工应在差旅结束后30天内提交报销申请。"
+            },
+            {
+              "doc_id": "D02",
+              "quote": "员工应在差旅结束后30天内提交报销申请。"
+            }
+          ],
+          "gaps": [],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\T04_df30d7b2ac8f4c86bce59eb48eb42186\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": true,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：COMPLETED",
+      "decision_summary": "读取D01与D02两份差旅报销制度，期限规定一致且覆盖全体员工，据此作答。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.05317959999956656,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.396454600006109,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.1379236000066157,
+      "model": "deepseek-flash",
+      "tool_call_count": 2
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 2.6799068999971496,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "travel_reimbursement",
+          "scope": [
+            "all_employees"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": "差旅结束后",
+          "period": null,
+          "conditions": [],
+          "constraint_type": "DEADLINE",
+          "facet": "all"
+        }
+      ],
+      "ambiguous": true,
+      "clarification": "员工类别未明确，若规则按员工类型不同需澄清；起算事件假定为差旅结束后",
+      "revision_reason": ""
+    },
+    {
+      "requirements": [
+        {
+          "rule_group": "travel_reimbursement",
+          "scope": [
+            "all_employees"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": "差旅结束后",
+          "period": null,
+          "conditions": [],
+          "constraint_type": "DEADLINE",
+          "facet": "all"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "已读规则覆盖全体员工且两份制度结论一致，员工类别歧义解除"
+    }
+  ],
+  "counts": {
+    "model_calls": 3,
+    "requested": 4,
+    "attempted": 4,
+    "executed": 4,
+    "skipped": 0
+  },
+  "final": {
+    "status": "COMPLETED",
+    "answer": "员工应在差旅结束后30天内提交报销申请。员工应在差旅结束后30天内提交报销申请。",
+    "claims": [
+      {
+        "statement": "员工应在差旅结束后30天内提交报销申请。",
+        "evidence_doc_id": "D01",
+        "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+        "rule_id": "D01-R1",
+        "scope": [
+          "all_employees"
+        ],
+        "constraint_type": "DEADLINE",
+        "operator": "<=",
+        "value": 30,
+        "unit": "days",
+        "period": null,
+        "reference_event": "差旅结束后",
+        "conditions": [],
+        "effective_from": "2026-01-01",
+        "effective_to": null
+      },
+      {
+        "statement": "员工应在差旅结束后30天内提交报销申请。",
+        "evidence_doc_id": "D02",
+        "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+        "rule_id": "D02-R1",
+        "scope": [
+          "all_employees"
+        ],
+        "constraint_type": "DEADLINE",
+        "operator": "<=",
+        "value": 30,
+        "unit": "days",
+        "period": null,
+        "reference_event": "差旅结束后",
+        "conditions": [],
+        "effective_from": "2026-01-01",
+        "effective_to": null
+      }
+    ],
+    "citations": [
+      {
+        "doc_id": "D01",
+        "quote": "员工应在差旅结束后30天内提交报销申请。"
+      },
+      {
+        "doc_id": "D02",
+        "quote": "员工应在差旅结束后30天内提交报销申请。"
+      }
+    ],
+    "gaps": [],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\T04_df30d7b2ac8f4c86bce59eb48eb42186\\trace.json"
+  },
+  "elapsed_seconds": 5.271425,
+  "finished_at": "2026-10-28T11:47:55.972066+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  },
+  "contract_attempts": [
+    {
+      "raw": {
+        "requirements": [
+          {
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": "差旅结束后",
+            "period": null,
+            "conditions": [],
+            "constraint_type": "DEADLINE",
+            "facet": "all"
+          }
+        ],
+        "ambiguous": true,
+        "clarification": "员工类别未明确，若规则按员工类型不同需澄清；起算事件假定为差旅结束后",
+        "revision_reason": ""
+      },
+      "normalized": {
+        "requirements": [
+          {
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": "差旅结束后",
+            "period": null,
+            "conditions": [],
+            "constraint_type": "DEADLINE",
+            "facet": "all"
+          }
+        ],
+        "ambiguous": true,
+        "clarification": "员工类别未明确，若规则按员工类型不同需澄清；起算事件假定为差旅结束后",
+        "revision_reason": ""
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "travel_reimbursement",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "差旅费用最晚什么时候报销？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": "差旅结束后",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "DEADLINE",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    },
+    {
+      "raw": {
+        "requirements": [
+          {
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": "差旅结束后",
+            "period": null,
+            "conditions": [],
+            "constraint_type": "DEADLINE",
+            "facet": "all"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": "已读规则覆盖全体员工且两份制度结论一致，员工类别歧义解除"
+      },
+      "normalized": {
+        "requirements": [
+          {
+            "rule_group": "travel_reimbursement",
+            "scope": [
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": "差旅结束后",
+            "period": null,
+            "conditions": [],
+            "constraint_type": "DEADLINE",
+            "facet": "all"
+          }
+        ],
+        "ambiguous": false,
+        "clarification": "",
+        "revision_reason": "已读规则覆盖全体员工且两份制度结论一致，员工类别歧义解除"
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "travel_reimbursement",
+          "source": [
+            "user"
+          ],
+          "evidence": [
+            "差旅费用最晚什么时候报销？"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": "差旅结束后",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": "DEADLINE",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    }
+  ],
+  "protected_constraints": [
+    {
+      "field": "as_of",
+      "value": "2026-10-28",
+      "source": "runtime",
+      "evidence": "--as-of",
+      "protected": true
+    },
+    {
+      "field": "rule_group",
+      "value": "travel_reimbursement",
+      "source": "user",
+      "evidence": "差旅费用最晚什么时候报销？",
+      "protected": true
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "run_id": "199b214050fb43eba032593a716311ac",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:13:58.223183+00:00",
+  "input": {
+    "question": "正式员工一周最多远程办公几天？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "T02",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "b0145eae33455070cfb157a08f058b7b12b2f2253cb8ff1e9d11cda8e8085838",
+  "prompt_hash": "bfbf6449c3c080c381c0af600c10d810cb1ec674860b446f3fd79aa081f3cdf6",
+  "schema_hash": "3e41290c913106869df34ce2547671e6de25a8372e2b6c427bf47954444f155b",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_HYsVlQKchypvozdazXfX9708",
+      "action": "search_docs",
+      "parameters": {
+        "query": "正式员工 远程办公 每周 天数 上限",
+        "top_k": 5,
+        "reason": "查找远程办公额度规则",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "一周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"query\": \"正式员工 远程办公 每周 天数 上限\", \"top_k\": 5, \"reason\": \"查找远程办公额度规则\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"一周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "observation": {
+        "ok": false,
+        "error_type": "QUESTION_CONTRACT_ERROR",
+        "message": "问题解释未通过校验",
+        "retryable": false,
+        "details": [
+          "问题每周周期未保留"
+        ]
+      },
+      "result_summary": "QUESTION_CONTRACT_ERROR: 问题解释未通过校验",
+      "decision_summary": "查找远程办公额度规则",
+      "ok": false,
+      "executed": false,
+      "elapsed_seconds": 0.0006073999975342304,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_gOADlvI6oycAbiXmjiOG7950",
+      "action": "search_docs",
+      "parameters": {
+        "query": "正式员工 远程办公 每周 天数 上限",
+        "top_k": 5,
+        "reason": "查找远程办公额度规则",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "保留问题中的每周周期"
+        }
+      },
+      "raw_arguments": "{\"query\": \"正式员工 远程办公 每周 天数 上限\", \"top_k\": 5, \"reason\": \"查找远程办公额度规则\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"保留问题中的每周周期\"}}",
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D03",
+            "title": "正式员工远程办公",
+            "version_date": "2026-03-01",
+            "score": 0.641307,
+            "snippet": "正式员工每周最多可以申请1天远程办公。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D04",
+            "title": "试用期远程办公",
+            "version_date": "2026-04-01",
+            "score": 0.390545,
+            "snippet": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D03,D04",
+      "decision_summary": "查找远程办公额度规则",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0005124000017531216,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 3,
+      "round": 3,
+      "call_id": "call_00_nk2tcv8G7f5C7NTCzOFW3731",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D03",
+        "reason": "读取正式员工远程办公规定原文",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"doc_id\": \"D03\", \"reason\": \"读取正式员工远程办公规定原文\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "observation": {
+        "ok": false,
+        "error_type": "QUESTION_CONTRACT_ERROR",
+        "message": "问题解释未通过校验",
+        "retryable": false,
+        "details": [
+          "修订问题解释必须说明原因"
+        ]
+      },
+      "result_summary": "QUESTION_CONTRACT_ERROR: 问题解释未通过校验",
+      "decision_summary": "读取正式员工远程办公规定原文",
+      "ok": false,
+      "executed": false,
+      "elapsed_seconds": 0.0009289000008720905,
+      "next_action": "read_doc"
+    },
+    {
+      "step": 4,
+      "round": 4,
+      "call_id": "call_00_NUuZdrgipuotv5eCIzGW6642",
+      "action": "read_doc",
+      "parameters": {
+        "doc_id": "D03",
+        "reason": "读取正式员工远程办公规定原文",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "从检索切换为读取候选文档，问题范围不变"
+        }
+      },
+      "raw_arguments": "{\"doc_id\": \"D03\", \"reason\": \"读取正式员工远程办公规定原文\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"从检索切换为读取候选文档，问题范围不变\"}}",
+      "observation": {
+        "ok": true,
+        "doc_id": "D03",
+        "title": "正式员工远程办公",
+        "version_date": "2026-03-01",
+        "scope": [
+          "regular"
+        ],
+        "content": "正式员工每周最多可以申请1天远程办公。本资料为合成制度，仅用于项目测试。",
+        "rules": [
+          {
+            "rule_id": "D03-R1",
+            "rule_group": "remote_work",
+            "scope": [
+              "regular"
+            ],
+            "effective_from": "2026-01-01",
+            "effective_to": null,
+            "operator": "<=",
+            "constraint_type": "MAX",
+            "value": 1,
+            "unit": "days",
+            "reference_event": null,
+            "period": "每周",
+            "conditions": [],
+            "supersedes": [],
+            "evidence": "正式员工每周最多可以申请1天远程办公。",
+            "facets": [
+              "limit"
+            ]
+          }
+        ]
+      },
+      "result_summary": "已读取 D03",
+      "decision_summary": "读取正式员工远程办公规定原文",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0002674999996088445,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 5,
+      "round": 5,
+      "call_id": "call_00_E4BGZVUWKPUVxn4yqnnb3676",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "COMPLETED",
+        "answer": "正式员工每周最多可以申请 1 天远程办公（依据 2026-03-01 版《正式员工远程办公》，该规定自 2026-01-01 起生效、截至 2026-10-28 未被替代）。",
+        "citations": [
+          {
+            "doc_id": "D03",
+            "quote": "正式员工每周最多可以申请1天远程办公。"
+          }
+        ],
+        "claims": [
+          {
+            "statement": "正式员工每周最多可以申请1天远程办公。",
+            "evidence_doc_id": "D03",
+            "evidence_quote": "正式员工每周最多可以申请1天远程办公。",
+            "rule_id": "D03-R1",
+            "scope": [
+              "regular"
+            ],
+            "constraint_type": "MAX",
+            "operator": "<=",
+            "value": 1,
+            "unit": "days",
+            "period": "每周",
+            "reference_event": null,
+            "conditions": [],
+            "effective_from": "2026-01-01",
+            "effective_to": null
+          }
+        ],
+        "gaps": [],
+        "conflicts": [],
+        "reason": "检索到并完整读取正式员工远程办公规定后提交答案。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "答案已由已读取规则覆盖，契约不变"
+        }
+      },
+      "raw_arguments": "{\"status\": \"COMPLETED\", \"answer\": \"正式员工每周最多可以申请 1 天远程办公（依据 2026-03-01 版《正式员工远程办公》，该规定自 2026-01-01 起生效、截至 2026-10-28 未被替代）。\", \"citations\": [{\"doc_id\": \"D03\", \"quote\": \"正式员工每周最多可以申请1天远程办公。\"}], \"claims\": [{\"statement\": \"正式员工每周最多可以申请1天远程办公。\", \"evidence_doc_id\": \"D03\", \"evidence_quote\": \"正式员工每周最多可以申请1天远程办公。\", \"rule_id\": \"D03-R1\", \"scope\": [\"regular\"], \"constraint_type\": \"MAX\", \"operator\": \"<=\", \"value\": 1, \"unit\": \"days\", \"period\": \"每周\", \"reference_event\": null, \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"gaps\": [], \"conflicts\": [], \"reason\": \"检索到并完整读取正式员工远程办公规定后提交答案。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"答案已由已读取规则覆盖，契约不变\"}}",
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "COMPLETED",
+          "answer": "正式员工每周最多可以申请1天远程办公。",
+          "claims": [
+            {
+              "statement": "正式员工每周最多可以申请1天远程办公。",
+              "evidence_doc_id": "D03",
+              "evidence_quote": "正式员工每周最多可以申请1天远程办公。",
+              "rule_id": "D03-R1",
+              "scope": [
+                "regular"
+              ],
+              "constraint_type": "MAX",
+              "operator": "<=",
+              "value": 1,
+              "unit": "days",
+              "period": "每周",
+              "reference_event": null,
+              "conditions": [],
+              "effective_from": "2026-01-01",
+              "effective_to": null
+            }
+          ],
+          "citations": [
+            {
+              "doc_id": "D03",
+              "quote": "正式员工每周最多可以申请1天远程办公。"
+            }
+          ],
+          "gaps": [],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\T02_199b214050fb43eba032593a716311ac\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": true,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：COMPLETED",
+      "decision_summary": "检索到并完整读取正式员工远程办公规定后提交答案。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0018077999993693084,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.4292443000013009,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.3724956999940332,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.639878800007864,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 4,
+      "ok": true,
+      "elapsed_seconds": 1.2919010999903549,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 5,
+      "ok": true,
+      "elapsed_seconds": 2.0415426999970805,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "constraint_type": "MAX",
+          "facet": "limit"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "保留问题中的每周周期"
+    },
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "constraint_type": "MAX",
+          "facet": "limit"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "从检索切换为读取候选文档，问题范围不变"
+    },
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "constraint_type": "MAX",
+          "facet": "limit"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "答案已由已读取规则覆盖，契约不变"
+    }
+  ],
+  "counts": {
+    "model_calls": 5,
+    "requested": 5,
+    "attempted": 5,
+    "executed": 3,
+    "skipped": 0
+  },
+  "final": {
+    "status": "COMPLETED",
+    "answer": "正式员工每周最多可以申请1天远程办公。",
+    "claims": [
+      {
+        "statement": "正式员工每周最多可以申请1天远程办公。",
+        "evidence_doc_id": "D03",
+        "evidence_quote": "正式员工每周最多可以申请1天远程办公。",
+        "rule_id": "D03-R1",
+        "scope": [
+          "regular"
+        ],
+        "constraint_type": "MAX",
+        "operator": "<=",
+        "value": 1,
+        "unit": "days",
+        "period": "每周",
+        "reference_event": null,
+        "conditions": [],
+        "effective_from": "2026-01-01",
+        "effective_to": null
+      }
+    ],
+    "citations": [
+      {
+        "doc_id": "D03",
+        "quote": "正式员工每周最多可以申请1天远程办公。"
+      }
+    ],
+    "gaps": [],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\T02_199b214050fb43eba032593a716311ac\\trace.json"
+  },
+  "elapsed_seconds": 7.784596,
+  "finished_at": "2026-10-28T11:14:06.003000+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  }
+}

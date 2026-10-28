@@ -1,0 +1,1121 @@
+{
+  "batch": "20261028T114641Z_ace5d168",
+  "pytest_exit_code": 0,
+  "trace_count": 15,
+  "baseline_files": 64,
+  "baseline_unchanged": true,
+  "model_calls": 57,
+  "tool_attempts": 62,
+  "executed_tools": 61,
+  "records": [
+    {
+      "case": "C01",
+      "trace": "examples/generated/live/C01_3f4db0132bb54b27a150c7df10d53d53/trace.json",
+      "sha256": "cd41f9c7d87ede5ce9d6360f0965c879719d6bfe009fc418f69536a33281d031",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 3,
+        "requested": 3,
+        "attempted": 3,
+        "executed": 3,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_8dqjKkVAeMx745VqHMWw1264",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 上限 天数",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_5UaPYyNCzlarzG9heEup3512",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_0vovrSowL6stdxxvqgyy1738",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "C02",
+      "trace": "examples/generated/live/C02_591409fe82324066b38ef5c894eb00d9/trace.json",
+      "sha256": "59cd314d3c1bb5fd562ac94b3fdd04f497bd13b965a77b63708cc8760beb845b",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "NEEDS_CLARIFICATION",
+      "counts": {
+        "model_calls": 4,
+        "requested": 5,
+        "attempted": 5,
+        "executed": 5,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_RInfpprthXwEPssNiyCY4735",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "差旅费用 报销 期限 最晚",
+            "top_k": 8
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_KnDPaN1e6an3MIjzDtny7489",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D01"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 2,
+          "call_id": "call_01_1s4D19PyQOGQdY4RxZJu4230",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D02"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 3,
+          "call_id": "call_00_eRJACNKOw8o8GAG4JVpt4196",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "差旅报销制度 修订 取代 30天 15天 适用",
+            "top_k": 8
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 5,
+          "round": 4,
+          "call_id": "call_00_DUtogDA6pJrB76n0oPiY0506",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "NEEDS_CLARIFICATION"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "C03",
+      "trace": "examples/generated/live/C03_bcd9f45c24014eaebc9d95e596daf681/trace.json",
+      "sha256": "7326a1b846e3015549a9a016697adea518a6180e3b09b25af9410c9481d0621a",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "INSUFFICIENT_EVIDENCE",
+      "counts": {
+        "model_calls": 6,
+        "requested": 5,
+        "attempted": 5,
+        "executed": 5,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 2,
+          "call_id": "call_00_dV4Fp8h8bgI9UJawL9lt7629",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "公司利润 年度利润",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 3,
+          "call_id": "call_00_O9BD2So0vYbueuHUzQbT6624",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "财务 业绩 经营数据 收入 利润 年报",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 4,
+          "call_id": "call_00_9BUlwPxsYVbDCLCG6r7x0625",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "财务制度 报销 规定",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 5,
+          "call_id": "call_00_s4qIizmLXRKNF5NT68oy6109",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "status": "INSUFFICIENT_EVIDENCE"
+          },
+          "error_type": "VALIDATION_ERROR",
+          "validation_details": [
+            "意图不明确或制度冲突应请求澄清"
+          ]
+        },
+        {
+          "step": 5,
+          "round": 6,
+          "call_id": "call_00_G4GQhTAkRcvdcw3Sv9Qs3834",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "INSUFFICIENT_EVIDENCE"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "C04",
+      "trace": "examples/generated/live/C04_67df1e912a35474c9e996b65764f9a9e/trace.json",
+      "sha256": "59d73ffee03949e0f4b6b65d0d60f6580c6791d2ff10a9c38e7158a77f2d4c2f",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 3,
+        "requested": 4,
+        "attempted": 4,
+        "executed": 4,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_JvZHR5TSXSNVZIuoPGWt3140",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 申请 天数 上限",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_FQD1DAvo4Ioq9abUUt311998",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 2,
+          "call_id": "call_01_A7foOrkybRdKctvBkfVT1754",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D04"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 3,
+          "call_id": "call_00_6NkKC3qd2wutkxl0dcUY2542",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "C05",
+      "trace": "examples/generated/live/C05_bb4257f0dc8942d7b389a8c54bd9540f/trace.json",
+      "sha256": "9ca8a1e984d19c8634c28549568b46a9c133be1ad15f61ed86249da1ce7cc3bb",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 4,
+        "requested": 5,
+        "attempted": 5,
+        "executed": 5,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_Gn5v1Q8AqjJOe15VJrha3911",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "试用期员工远程办公规定 额度 申请",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_LjJKE92amS3iKMxSYEok5033",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D04"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 2,
+          "call_id": "call_01_brVKZQPMjr7bE3L7Ulqk7662",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 3,
+          "call_id": "call_00_rJjNwKfxR6nlG4jCjUfh3959",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": "VALIDATION_ERROR",
+          "validation_details": [
+            "声明不适用于问题的规则、范围或时间"
+          ]
+        },
+        {
+          "step": 5,
+          "round": 4,
+          "call_id": "call_00_FP00jd455De6VPTOPFDa1968",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "C06",
+      "trace": "examples/generated/live/C06_d4faa0e129694d71aec679b979335aa0/trace.json",
+      "sha256": "8533665efb6dcace4cd387ab826e209b09baebaeda43fa097dff4f355b060c25",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 4,
+        "requested": 4,
+        "attempted": 4,
+        "executed": 4,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_wlZ1aqHhdyiYoA4Idir33266",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 最多 天数",
+            "top_k": 10
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_DgUnDGv6K4aILXD4BMM72138",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 最多 天数",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_R6a9YEgYZJD2ulmb01v08300",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 4,
+          "call_id": "call_00_QxsDHpo1eMEhAxhFFshI0461",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "C06B",
+      "trace": "examples/generated/live/C06B_c1ac1a6fe7ed4c56b8de99fe15763116/trace.json",
+      "sha256": "fd0b6721f14c655070955e49ee3aacaf81d3a43a6b0f53dc2b22def4426a99f4",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "FAILED",
+      "counts": {
+        "model_calls": 5,
+        "requested": 5,
+        "attempted": 5,
+        "executed": 5,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_ShVSs7zO4cEm94IppzZD7329",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 天数 上限",
+            "top_k": 8
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_9WceqlJbLyynhjHa3ltj0754",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "远程办公 一周 最多 天 正式员工",
+            "top_k": 8
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_BuuZMkAXWPvrlZiehA6m4303",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "remote work policy weekly limit regular employees",
+            "top_k": 8
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 4,
+          "call_id": "call_00_N6xpmSTvNlPdAQidDZYk6176",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "远程办公额度",
+            "top_k": 5
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 5,
+          "round": 5,
+          "call_id": "call_00_D30Wp88GgCCaKaRcVOqQ1982",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "FAILED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "dynamic_fault",
+      "trace": "examples/generated/live/dynamic_fault_e15e91aff5fa483f95df445553d820b2/trace.json",
+      "sha256": "93da2ed33b69396f23cc232ee0a2a2abd4df9a3c3489b3c60b3eeca85e090390",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 4,
+        "requested": 4,
+        "attempted": 4,
+        "executed": 4,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_m1yLyj3bnxC73tZ3pamv9303",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "远程办公 额度 正式员工 每周 天数",
+            "top_k": 5
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_JOLBBBhSUkHvHa4jKwav2646",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "远程办公 正式员工 每周最多几天",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_tnBz8BdUNlpCt8XdswLV0653",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 4,
+          "call_id": "call_00_UfcDR9BnnCVDU6lR5RQh3494",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "dynamic_normal",
+      "trace": "examples/generated/live/dynamic_normal_16350d6da87942c7a2f050629409bea9/trace.json",
+      "sha256": "f08f85896315dc7cbb23c0feab0e4bd679eaab7049b75fe65838e766cbf1e520",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 3,
+        "requested": 3,
+        "attempted": 3,
+        "executed": 3,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_yjbPLrfOvuDimh2WMAnV1134",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 最多 天数",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_L2nIoitNIvht6l4pq6do2398",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_MY0hHWEMUIsuKqLkhf5Q4992",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "T01",
+      "trace": "examples/generated/live/T01_e9cb1d2863bd4149b1becc328e92d079/trace.json",
+      "sha256": "a7c2c0fecff035eb80d3a17316e8a858f053b6f57d41d3bd35c384f5f057f8ea",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 3,
+        "requested": 3,
+        "attempted": 3,
+        "executed": 3,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_t6EtelFgtqc9uMgLqGx08567",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "正式员工 远程办公 一周 最多 天数",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_910gv2MAKV4WO7ptWC7s2712",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_8GnTBFfBW4al6CNb5kKZ9316",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "T02",
+      "trace": "examples/generated/live/T02_9e897dc19c6145c78985c690992433c8/trace.json",
+      "sha256": "90c9c9756236225233f996e24e6f8f33d2a4ddbeece09f1a490ef1d44db90552",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 3,
+        "requested": 3,
+        "attempted": 3,
+        "executed": 3,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_yEgyjHQafG8wJLiuxYoR7738",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "远程办公 额度 正式员工 每周 最多几天",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_VXGVKvWFcci92vLBO6RG4182",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_H1QRR3XOuY5j3oaBoi6N7443",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "T03",
+      "trace": "examples/generated/live/T03_8ad96848c9f74818b5fa0be369aa7ef2/trace.json",
+      "sha256": "35a7a47ead72510d5b98327b17697f8df520a70689fbf680afb7b2c04ce9baab",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "NEEDS_CLARIFICATION",
+      "counts": {
+        "model_calls": 4,
+        "requested": 5,
+        "attempted": 5,
+        "executed": 4,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_uFoFSRLCg9TTMRcyZCIl7562",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "差旅费用 报销 期限 最晚 时间",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_RSopHtk7mxDxqpSa71lj5156",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D01"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 2,
+          "call_id": "call_01_zWNTTJsfQKV9CG6Royoy8613",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D02"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 3,
+          "call_id": "call_00_r4ZaDw0XoFXP9XIyuX228524",
+          "action": "submit_answer",
+          "executed": false,
+          "ok": false,
+          "business_parameters": {
+            "status": "NEEDS_CLARIFICATION"
+          },
+          "error_type": "INVALID_ARGUMENTS",
+          "validation_details": [
+            "question_contract: {'requirements': [{'rule_group': 'travel_reimbursement', 'scope': ['all_employees'], 'as_of': '2026-10-28', 'reference_event': '差旅结束后', 'period': None, 'conditions': [], 'constraint_type': 'DEADLINE', 'facet': 'all'}], 'ambiguous': True, 'clarification': '《差旅报销制度 A》（30天）与《差旅报销制度 B》（15天）范围与生效期重叠且无取代声明，请确认以哪份为准。', 'revision_reason': None} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "step": 5,
+          "round": 4,
+          "call_id": "call_00_BgtjERB0u2g0l8QtFps70929",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "NEEDS_CLARIFICATION"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "T04",
+      "trace": "examples/generated/live/T04_df30d7b2ac8f4c86bce59eb48eb42186/trace.json",
+      "sha256": "d3d149ffb98eeb035feb8ac68a7f6b6247c81f8528368cfffd7a7e7a0df3b1d2",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 3,
+        "requested": 4,
+        "attempted": 4,
+        "executed": 4,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_WZZdw5RZj1PZpdPF1sEu1577",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "差旅费用报销期限 最晚什么时候报销",
+            "top_k": 8
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_Q5sPHpYkovDW7u03fLTA0761",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D01"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 2,
+          "call_id": "call_01_gD3eV3a3vmCE8ApBJq2R3005",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D02"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 3,
+          "call_id": "call_00_9xMWJ1OU5XDZOgSCg28d1874",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "T05",
+      "trace": "examples/generated/live/T05_4fa287cc693046b896c2a6f6afb35b8d/trace.json",
+      "sha256": "4c71ec59d42698dfc377e3b43c91149e151cb9f65f0633ae305645f7ea3e3e7f",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "INSUFFICIENT_EVIDENCE",
+      "counts": {
+        "model_calls": 4,
+        "requested": 5,
+        "attempted": 5,
+        "executed": 5,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_KZ4nLP4OSWvHUmgdbb5S9398",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "正式员工远程办公额度 每周最多几天",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_tMWEozAaa1SEXH7WHno08544",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "远程办公 规定 每周 天",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 2,
+          "call_id": "call_01_cNM72zxg4uEOfzyMuHjv4548",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "remote work policy days per week",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 3,
+          "call_id": "call_00_QER26RvWWsG7Y9GHclwp0957",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "员工手册 考勤 办公方式",
+            "top_k": 10
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 5,
+          "round": 4,
+          "call_id": "call_00_XK5icacRsj5DAETYVE3D8662",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "INSUFFICIENT_EVIDENCE"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    },
+    {
+      "case": "T06",
+      "trace": "examples/generated/live/T06_666e7a8bbada4c39b408787c974fda31/trace.json",
+      "sha256": "cfdf0916c9e78e306a08918fd310e29c43f5cf618c068a07c644b9fdeeaf0fb3",
+      "mode": "live",
+      "model": "deepseek-flash",
+      "provider_host": "api.deepseek.com",
+      "final_status": "COMPLETED",
+      "counts": {
+        "model_calls": 4,
+        "requested": 4,
+        "attempted": 4,
+        "executed": 4,
+        "skipped": 0
+      },
+      "actions": [
+        {
+          "step": 1,
+          "round": 1,
+          "call_id": "call_00_dJQwGK1JEa8UPN52WtiI3705",
+          "action": "search_docs",
+          "executed": true,
+          "ok": false,
+          "business_parameters": {
+            "query": "正式员工 远程办公 每周 最多 天数",
+            "top_k": 5
+          },
+          "error_type": "INJECTED_FAILURE",
+          "validation_details": []
+        },
+        {
+          "step": 2,
+          "round": 2,
+          "call_id": "call_00_9i6DwfAX9OhrnLC0AMiK0183",
+          "action": "search_docs",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "query": "远程办公 额度 每周 天数 正式员工",
+            "top_k": 5
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 3,
+          "round": 3,
+          "call_id": "call_00_Edg1Nd9T3AIushXbqts13432",
+          "action": "read_doc",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "doc_id": "D03"
+          },
+          "error_type": null,
+          "validation_details": []
+        },
+        {
+          "step": 4,
+          "round": 4,
+          "call_id": "call_00_ZR5gCSvkYDRYz5gd2nvV2697",
+          "action": "submit_answer",
+          "executed": true,
+          "ok": true,
+          "business_parameters": {
+            "status": "COMPLETED"
+          },
+          "error_type": null,
+          "validation_details": []
+        }
+      ]
+    }
+  ]
+}

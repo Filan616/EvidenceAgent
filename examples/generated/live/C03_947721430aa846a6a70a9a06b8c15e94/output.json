@@ -1,0 +1,11 @@
+{
+  "status": "INSUFFICIENT_EVIDENCE",
+  "answer": "现有资料不足以回答该问题。",
+  "claims": [],
+  "citations": [],
+  "gaps": [
+    "已成功检索，但尚无足够的有效证据覆盖问题。"
+  ],
+  "conflicts": [],
+  "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C03_947721430aa846a6a70a9a06b8c15e94\\trace.json"
+}

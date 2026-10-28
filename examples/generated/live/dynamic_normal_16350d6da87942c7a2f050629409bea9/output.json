@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETED",
+  "answer": "正式员工每周最多可以申请2天远程办公。",
+  "claims": [
+    {
+      "statement": "正式员工每周最多可以申请2天远程办公。",
+      "evidence_doc_id": "D03",
+      "evidence_quote": "正式员工每周最多可以申请2天远程办公。",
+      "rule_id": "D03-R1",
+      "scope": [
+        "regular"
+      ],
+      "constraint_type": "MAX",
+      "operator": "<=",
+      "value": 2,
+      "unit": "days",
+      "period": "每周",
+      "reference_event": null,
+      "conditions": [],
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    }
+  ],
+  "citations": [
+    {
+      "doc_id": "D03",
+      "quote": "正式员工每周最多可以申请2天远程办公。"
+    }
+  ],
+  "gaps": [],
+  "conflicts": [],
+  "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\dynamic_normal_16350d6da87942c7a2f050629409bea9\\trace.json"
+}

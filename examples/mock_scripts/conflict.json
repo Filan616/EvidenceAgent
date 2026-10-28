@@ -1,0 +1,62 @@
+{
+  "mode": "mock",
+  "description": "预设回放，仅验证执行器；不证明模型能力",
+  "responses": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "c1",
+          "type": "function",
+          "function": {
+            "name": "search_docs",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"travel_reimbursement\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": \"差旅结束后\", \"period\": null, \"conditions\": [], \"facet\": \"all\", \"constraint_type\": \"DEADLINE\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}, \"query\": \"差旅报销期限\", \"top_k\": 5}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "c2",
+          "type": "function",
+          "function": {
+            "name": "read_doc",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"doc_id\": \"D01\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "c3",
+          "type": "function",
+          "function": {
+            "name": "read_doc",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"doc_id\": \"D02\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "c4",
+          "type": "function",
+          "function": {
+            "name": "submit_answer",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"status\": \"NEEDS_CLARIFICATION\", \"answer\": \"此自由文本不得直接作为最终答案。\", \"claims\": [{\"statement\": \"员工应在差旅结束后30天内提交报销申请。\", \"evidence_doc_id\": \"D01\", \"evidence_quote\": \"员工应在差旅结束后30天内提交报销申请。\", \"rule_id\": \"D01-R1\", \"scope\": [\"all_employees\"], \"constraint_type\": \"DEADLINE\", \"operator\": \"<=\", \"value\": 30, \"unit\": \"days\", \"period\": null, \"reference_event\": \"差旅结束后\", \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}, {\"statement\": \"员工应在差旅结束后15天内提交报销申请。\", \"evidence_doc_id\": \"D02\", \"evidence_quote\": \"员工应在差旅结束后15天内提交报销申请。\", \"rule_id\": \"D02-R1\", \"scope\": [\"all_employees\"], \"constraint_type\": \"DEADLINE\", \"operator\": \"<=\", \"value\": 15, \"unit\": \"days\", \"period\": null, \"reference_event\": \"差旅结束后\", \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"citations\": [{\"doc_id\": \"D01\", \"quote\": \"员工应在差旅结束后30天内提交报销申请。\"}, {\"doc_id\": \"D02\", \"quote\": \"员工应在差旅结束后15天内提交报销申请。\"}], \"gaps\": [\"缺少适用依据\"], \"conflicts\": [\"存在冲突\"]}"
+          }
+        }
+      ]
+    }
+  ]
+}

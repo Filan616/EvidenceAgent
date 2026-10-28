@@ -1,0 +1,263 @@
+{
+  "rule_groups": {
+    "travel_reimbursement": {
+      "semantics": "functional",
+      "description": "差旅报销唯一规定期限；不是多个独立可叠加上限"
+    },
+    "remote_work": {
+      "semantics": "functional",
+      "description": "按员工类型规定的远程办公额度或申请规则"
+    },
+    "annual_leave": {
+      "semantics": "functional",
+      "description": "年假申请"
+    },
+    "reimbursement_receipts": {
+      "semantics": "functional",
+      "description": "报销票据要求"
+    },
+    "information_security": {
+      "semantics": "functional",
+      "description": "信息安全 FAQ"
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "D01",
+      "title": "差旅报销制度 A",
+      "version_date": "2026-01-01",
+      "scope": [
+        "all_employees"
+      ],
+      "content": "员工应在差旅结束后30天内提交报销申请。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D01-R1",
+          "rule_group": "travel_reimbursement",
+          "scope": [
+            "all_employees"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "<=",
+          "constraint_type": "DEADLINE",
+          "value": 30,
+          "unit": "days",
+          "reference_event": "差旅结束后",
+          "period": null,
+          "conditions": [],
+          "supersedes": [],
+          "evidence": "员工应在差旅结束后30天内提交报销申请。",
+          "facets": [
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "D02",
+      "title": "差旅报销制度 B",
+      "version_date": "2026-02-01",
+      "scope": [
+        "all_employees"
+      ],
+      "content": "员工应在差旅结束后15天内提交报销申请。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D02-R1",
+          "rule_group": "travel_reimbursement",
+          "scope": [
+            "all_employees"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "<=",
+          "constraint_type": "DEADLINE",
+          "value": 15,
+          "unit": "days",
+          "reference_event": "差旅结束后",
+          "period": null,
+          "conditions": [],
+          "supersedes": [],
+          "evidence": "员工应在差旅结束后15天内提交报销申请。",
+          "facets": [
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "D03",
+      "title": "正式员工远程办公",
+      "version_date": "2026-03-01",
+      "scope": [
+        "regular"
+      ],
+      "content": "正式员工每周最多可以申请1天远程办公。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D03-R1",
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "<=",
+          "constraint_type": "MAX",
+          "value": 1,
+          "unit": "days",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "supersedes": [],
+          "evidence": "正式员工每周最多可以申请1天远程办公。",
+          "facets": [
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "D04",
+      "title": "试用期远程办公",
+      "version_date": "2026-04-01",
+      "scope": [
+        "probation"
+      ],
+      "content": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D04-R1",
+          "rule_group": "remote_work",
+          "scope": [
+            "probation"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "=",
+          "constraint_type": "EXACT",
+          "value": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+          "unit": "text",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "主管审批",
+            "不自动适用正式员工的固定额度"
+          ],
+          "supersedes": [],
+          "evidence": "试用期员工申请远程办公需主管审批，不自动适用正式员工的固定额度。",
+          "facets": [
+            "procedure",
+            "requirements",
+            "limit"
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "D05",
+      "title": "年假申请",
+      "version_date": "2026-05-01",
+      "scope": [
+        "all_employees"
+      ],
+      "content": "员工申请年假需通过内部系统提前提交审批。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D05-R1",
+          "rule_group": "annual_leave",
+          "scope": [
+            "all_employees"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "=",
+          "constraint_type": "EXACT",
+          "value": "员工申请年假需通过内部系统提前提交审批。",
+          "unit": "text",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "通过内部系统",
+            "提前提交审批"
+          ],
+          "supersedes": [],
+          "evidence": "员工申请年假需通过内部系统提前提交审批。",
+          "facets": [
+            "procedure",
+            "requirements"
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "D06",
+      "title": "报销票据要求",
+      "version_date": "2026-06-01",
+      "scope": [
+        "all_employees"
+      ],
+      "content": "员工办理差旅报销需提交有效票据。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D06-R1",
+          "rule_group": "reimbursement_receipts",
+          "scope": [
+            "all_employees"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "=",
+          "constraint_type": "EXACT",
+          "value": "员工办理差旅报销需提交有效票据。",
+          "unit": "text",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "有效票据"
+          ],
+          "supersedes": [],
+          "evidence": "员工办理差旅报销需提交有效票据。",
+          "facets": [
+            "requirements"
+          ]
+        }
+      ]
+    },
+    {
+      "doc_id": "D07",
+      "title": "信息安全 FAQ",
+      "version_date": "2026-07-01",
+      "scope": [
+        "all_employees"
+      ],
+      "content": "员工禁止公开分享内部账号和凭证。本资料为合成制度，仅用于项目测试。",
+      "rules": [
+        {
+          "rule_id": "D07-R1",
+          "rule_group": "information_security",
+          "scope": [
+            "all_employees"
+          ],
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "operator": "=",
+          "constraint_type": "EXACT",
+          "value": "员工禁止公开分享内部账号和凭证。",
+          "unit": "text",
+          "reference_event": null,
+          "period": null,
+          "conditions": [
+            "禁止公开分享"
+          ],
+          "supersedes": [],
+          "evidence": "员工禁止公开分享内部账号和凭证。",
+          "facets": [
+            "requirements"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "run_id": "947721430aa846a6a70a9a06b8c15e94",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:12:53.747542+00:00",
+  "input": {
+    "question": "公司今年利润是多少？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "C03",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "bfbf6449c3c080c381c0af600c10d810cb1ec674860b446f3fd79aa081f3cdf6",
+  "schema_hash": "3e41290c913106869df34ce2547671e6de25a8372e2b6c427bf47954444f155b",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_wbTo0LZGxaem7ymvAS2t3468",
+      "action": "search_docs",
+      "parameters": {
+        "query": "公司年度利润 财务业绩 盈利",
+        "top_k": 5,
+        "reason": "确认制度库中是否存在公司利润/财务业绩相关规则。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "unknown",
+              "scope": [
+                "all_employees"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "2026年度",
+              "conditions": [
+                "公司整体年度利润金额"
+              ],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"query\": \"公司年度利润 财务业绩 盈利\", \"top_k\": 5, \"reason\": \"确认制度库中是否存在公司利润/财务业绩相关规则。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"unknown\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"2026年度\", \"conditions\": [\"公司整体年度利润金额\"], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "确认制度库中是否存在公司利润/财务业绩相关规则。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0005502999993041158,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_gFPy0vw0LoEGOyNkBp3X4549",
+      "action": "search_docs",
+      "parameters": {
+        "query": "财务 利润 营收 报告 披露",
+        "top_k": 5,
+        "reason": "更换关键词重试，确认是否有财务类文档。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"财务 利润 营收 报告 披露\", \"top_k\": 5, \"reason\": \"更换关键词重试，确认是否有财务类文档。\", \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "更换关键词重试，确认是否有财务类文档。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0003209999995306134,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 3,
+      "round": 3,
+      "call_id": "call_00_vBeUOA9ZDUPPggK1dnAS5237",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "answer": "无法回答。本问答 Agent 只能依据制度文档中的已读取内容陈述企业事实，而制度库中检索不到任何与公司利润、营收或财务业绩相关的文档，因此没有关于\"今年（2026 年）公司利润\"的证据。建议向财务部门查询正式财务报表。",
+        "citations": [],
+        "claims": [],
+        "gaps": [
+          "制度库中未检索到任何公司利润/营收/财务业绩相关文档，无法给出 2026 年度利润金额。"
+        ],
+        "conflicts": [],
+        "reason": "两次不同关键词检索均无结果，说明缺少可引用证据，按无证据提交。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "unknown",
+              "scope": [
+                "all_employees"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "2026年度",
+              "conditions": [
+                "公司整体年度利润金额"
+              ],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"status\": \"INSUFFICIENT_EVIDENCE\", \"answer\": \"无法回答。本问答 Agent 只能依据制度文档中的已读取内容陈述企业事实，而制度库中检索不到任何与公司利润、营收或财务业绩相关的文档，因此没有关于\\\"今年（2026 年）公司利润\\\"的证据。建议向财务部门查询正式财务报表。\", \"citations\": [], \"claims\": [], \"gaps\": [\"制度库中未检索到任何公司利润/营收/财务业绩相关文档，无法给出 2026 年度利润金额。\"], \"conflicts\": [], \"reason\": \"两次不同关键词检索均无结果，说明缺少可引用证据，按无证据提交。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"unknown\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"2026年度\", \"conditions\": [\"公司整体年度利润金额\"], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}}",
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "answer": "现有资料不足以回答该问题。",
+          "claims": [],
+          "citations": [],
+          "gaps": [
+            "已成功检索，但尚无足够的有效证据覆盖问题。"
+          ],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C03_947721430aa846a6a70a9a06b8c15e94\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：INSUFFICIENT_EVIDENCE",
+      "decision_summary": "两次不同关键词检索均无结果，说明缺少可引用证据，按无证据提交。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0009303000115323812,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.7279060000000754,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.1843890000018291,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 2.204247400004533,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "unknown",
+          "scope": [
+            "all_employees"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "2026年度",
+          "conditions": [
+            "公司整体年度利润金额"
+          ],
+          "constraint_type": null,
+          "facet": "all"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": ""
+    }
+  ],
+  "counts": {
+    "model_calls": 3,
+    "requested": 3,
+    "attempted": 3,
+    "executed": 3,
+    "skipped": 0
+  },
+  "final": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "现有资料不足以回答该问题。",
+    "claims": [],
+    "citations": [],
+    "gaps": [
+      "已成功检索，但尚无足够的有效证据覆盖问题。"
+    ],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C03_947721430aa846a6a70a9a06b8c15e94\\trace.json"
+  },
+  "elapsed_seconds": 5.121057,
+  "finished_at": "2026-10-28T11:12:58.866206+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  }
+}

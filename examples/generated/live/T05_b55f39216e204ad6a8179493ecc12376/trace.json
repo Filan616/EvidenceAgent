@@ -1,0 +1,418 @@
+{
+  "run_id": "b55f39216e204ad6a8179493ecc12376",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:14:30.350976+00:00",
+  "input": {
+    "question": "正式员工一周最多远程办公几天？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "T05",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "a8d58af22c6ef5aedd248bef528e3813dd82f2a1841b395fa81d0f3132922936",
+  "prompt_hash": "bfbf6449c3c080c381c0af600c10d810cb1ec674860b446f3fd79aa081f3cdf6",
+  "schema_hash": "3e41290c913106869df34ce2547671e6de25a8372e2b6c427bf47954444f155b",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "call_00_d8cg7VVBaCZ5LZdiZJ9d5511",
+      "action": "search_docs",
+      "parameters": {
+        "query": "正式员工 远程办公 每周 天数 上限",
+        "top_k": 8,
+        "reason": "查找远程办公额度规定",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "week",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "初始检索：正式员工每周远程办公天数上限"
+        }
+      },
+      "raw_arguments": "{\"query\": \"正式员工 远程办公 每周 天数 上限\", \"top_k\": 8, \"reason\": \"查找远程办公额度规定\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"week\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"初始检索：正式员工每周远程办公天数上限\"}}",
+      "observation": {
+        "ok": false,
+        "error_type": "QUESTION_CONTRACT_ERROR",
+        "message": "问题解释未通过校验",
+        "retryable": false,
+        "details": [
+          "问题每周周期未保留"
+        ]
+      },
+      "result_summary": "QUESTION_CONTRACT_ERROR: 问题解释未通过校验",
+      "decision_summary": "查找远程办公额度规定",
+      "ok": false,
+      "executed": false,
+      "elapsed_seconds": 0.0008315000013681129,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "call_00_zzHO0y0rnQY9K3Md2LtA0178",
+      "action": "search_docs",
+      "parameters": {
+        "query": "正式员工 远程办公 每周 天数 上限",
+        "reason": "查找远程办公额度规定，周期按每周保存",
+        "top_k": 8,
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": "每周",
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "初始检索：正式员工每周远程办公天数上限，周期字段保留每周"
+        }
+      },
+      "raw_arguments": "{\"query\": \"正式员工 远程办公 每周 天数 上限\", \"reason\": \"查找远程办公额度规定，周期按每周保存\", \"top_k\": 8, \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": \"每周\", \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"初始检索：正式员工每周远程办公天数上限，周期字段保留每周\"}}",
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "查找远程办公额度规定，周期按每周保存",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0007097999914549291,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 3,
+      "round": 3,
+      "call_id": "call_00_eW6ejwNn4QyHWmVjddYv1494",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程办公 制度 规定",
+        "reason": "放宽关键词重新检索远程办公相关文档",
+        "top_k": 10,
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"远程办公 制度 规定\", \"reason\": \"放宽关键词重新检索远程办公相关文档\", \"top_k\": 10, \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "放宽关键词重新检索远程办公相关文档",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00041930000588763505,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 4,
+      "round": 4,
+      "call_id": "call_00_ukk0c5KYYoDGaYa0C2u30853",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程办公 弹性办公 居家办公 员工手册",
+        "reason": "更换表述再次检索远程办公规则",
+        "top_k": 10,
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"远程办公 弹性办公 居家办公 员工手册\", \"reason\": \"更换表述再次检索远程办公规则\", \"top_k\": 10, \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "更换表述再次检索远程办公规则",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0003667999990284443,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 5,
+      "round": 5,
+      "call_id": "call_00_1S4v2g4ECG6QYeNj5iWy5925",
+      "action": "search_docs",
+      "parameters": {
+        "query": "年假 申请 流程",
+        "reason": "确认检索是否可用，并查看是否有综合制度文档涵盖远程办公",
+        "top_k": 5,
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"年假 申请 流程\", \"reason\": \"确认检索是否可用，并查看是否有综合制度文档涵盖远程办公\", \"top_k\": 5, \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D05",
+            "title": "年假申请",
+            "version_date": "2026-05-01",
+            "score": 0.286294,
+            "snippet": "员工申请年假需通过内部系统提前提交审批。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D05",
+      "decision_summary": "确认检索是否可用，并查看是否有综合制度文档涵盖远程办公",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00044550000166054815,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 6,
+      "round": 6,
+      "call_id": "call_00_Up3aTtVZIn2qyhsb8V971336",
+      "action": "search_docs",
+      "parameters": {
+        "query": "员工 办公 出勤 工作地点 制度",
+        "reason": "库存中检索可能与远程办公相关的通用制度文档",
+        "top_k": 10,
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"员工 办公 出勤 工作地点 制度\", \"reason\": \"库存中检索可能与远程办公相关的通用制度文档\", \"top_k\": 10, \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "库存中检索可能与远程办公相关的通用制度文档",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0003605999954743311,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 7,
+      "round": 7,
+      "call_id": "call_00_pikVrZsbgfLuUidnItLN5959",
+      "action": "search_docs",
+      "parameters": {
+        "query": "远程 办公 天数 限制 申请",
+        "reason": "再次尝试不同关键词组合以确认是否存在远程办公文档",
+        "top_k": 10,
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"远程 办公 天数 限制 申请\", \"reason\": \"再次尝试不同关键词组合以确认是否存在远程办公文档\", \"top_k\": 10, \"question_contract\": null}",
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D05",
+            "title": "年假申请",
+            "version_date": "2026-05-01",
+            "score": 0.098514,
+            "snippet": "员工申请年假需通过内部系统提前提交审批。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D05",
+      "decision_summary": "再次尝试不同关键词组合以确认是否存在远程办公文档",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0005723000067519024,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 8,
+      "round": 8,
+      "call_id": "call_00_INaIXKsbJfcnZRjpmuHJ8013",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "answer": "未能找到关于远程办公额度的制度文档。多次以「远程办公」「居家办公」「弹性办公」「工作地点」等关键词检索均无相关结果（检索工具正常，其他主题可检索到文档），因此无法给出正式员工每周远程办公天数的上限。",
+        "citations": [],
+        "claims": [],
+        "gaps": [
+          "缺少规定正式员工每周远程办公天数上限的文档（remote_work 规则组）"
+        ],
+        "conflicts": [],
+        "reason": "多轮检索未找到远程办公相关规定，无法提供有证据支持的天数上限。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": "每周",
+              "period": "每周",
+              "conditions": [],
+              "constraint_type": "MAX",
+              "facet": "limit"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": "初始检索：正式员工每周远程办公天数上限，周期字段保留每周"
+        }
+      },
+      "raw_arguments": "{\"status\": \"INSUFFICIENT_EVIDENCE\", \"answer\": \"未能找到关于远程办公额度的制度文档。多次以「远程办公」「居家办公」「弹性办公」「工作地点」等关键词检索均无相关结果（检索工具正常，其他主题可检索到文档），因此无法给出正式员工每周远程办公天数的上限。\", \"citations\": [], \"claims\": [], \"gaps\": [\"缺少规定正式员工每周远程办公天数上限的文档（remote_work 规则组）\"], \"conflicts\": [], \"reason\": \"多轮检索未找到远程办公相关规定，无法提供有证据支持的天数上限。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": \"每周\", \"period\": \"每周\", \"conditions\": [], \"constraint_type\": \"MAX\", \"facet\": \"limit\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"初始检索：正式员工每周远程办公天数上限，周期字段保留每周\"}}",
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "answer": "现有资料不足以回答该问题。",
+          "claims": [],
+          "citations": [],
+          "gaps": [
+            "已成功检索，但尚无足够的有效证据覆盖问题。"
+          ],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\T05_b55f39216e204ad6a8179493ecc12376\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：INSUFFICIENT_EVIDENCE",
+      "decision_summary": "多轮检索未找到远程办公相关规定，无法提供有证据支持的天数上限。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0008315000013681129,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.4335232000012184,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.3562578999990365,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.1910435000027064,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 4,
+      "ok": true,
+      "elapsed_seconds": 0.9116994000069099,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 5,
+      "ok": true,
+      "elapsed_seconds": 1.4456294999981765,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 6,
+      "ok": true,
+      "elapsed_seconds": 1.1360085000051185,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 7,
+      "ok": true,
+      "elapsed_seconds": 1.197993800000404,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 8,
+      "ok": true,
+      "elapsed_seconds": 2.142478599998867,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": "每周",
+          "period": "每周",
+          "conditions": [],
+          "constraint_type": "MAX",
+          "facet": "limit"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": "初始检索：正式员工每周远程办公天数上限，周期字段保留每周"
+    }
+  ],
+  "counts": {
+    "model_calls": 8,
+    "requested": 8,
+    "attempted": 8,
+    "executed": 7,
+    "skipped": 0
+  },
+  "final": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "现有资料不足以回答该问题。",
+    "claims": [],
+    "citations": [],
+    "gaps": [
+      "已成功检索，但尚无足够的有效证据覆盖问题。"
+    ],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\T05_b55f39216e204ad6a8179493ecc12376\\trace.json"
+  },
+  "elapsed_seconds": 10.827724,
+  "finished_at": "2026-10-28T11:14:41.171070+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  }
+}

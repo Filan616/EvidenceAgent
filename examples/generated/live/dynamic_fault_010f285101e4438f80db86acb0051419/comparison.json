@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "normal": {
+    "observation_call_id": "call_00_OCQIsf6nijluKhQPTdUt4509",
+    "observation_ok": false,
+    "next_call_id": "call_00_93T5fOHjpv8f9LmG0nnS2196",
+    "action": "search_docs",
+    "parameters": {
+      "query": "正式员工 远程办公 每周 天数 上限",
+      "top_k": 8
+    }
+  },
+  "changed": {
+    "observation_call_id": "call_00_jX2RiOTuCb0HhFET3w0n8593",
+    "observation_ok": false,
+    "next_call_id": "call_00_KFNCQjnbfYFnDaKxwbFy2197",
+    "action": "search_docs",
+    "parameters": {
+      "query": "正式员工 远程办公 一周 天数 上限",
+      "top_k": 5
+    }
+  },
+  "reason": "未观察到所需的不同后续动作；不能仅以答案不同证明",
+  "normal_trace": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\dynamic_normal_6f335cdf2a4844c9b550fd0ee9cb2dbf\\trace.json",
+  "changed_trace": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\dynamic_fault_010f285101e4438f80db86acb0051419\\trace.json"
+}

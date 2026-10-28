@@ -1,0 +1,2 @@
+# Preserve recorded evidence bytes so published SHA256 manifests remain valid.
+examples/** -text

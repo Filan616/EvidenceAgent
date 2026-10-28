@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED",
+  "checked_at": "2026-10-28T10:16:09.661641+00:00",
+  "reason": "OPENAI_API_KEY 和/或 MODEL_NAME 未配置；没有执行真实模型验证，没有生成 Live Trace。"
+}

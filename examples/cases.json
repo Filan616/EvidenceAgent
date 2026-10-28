@@ -1,0 +1,93 @@
+[
+  {
+    "id": "C01",
+    "script": "normal",
+    "question": "正式员工一周最多远程办公几天？",
+    "expected_status": "COMPLETED",
+    "checks": [
+      "读取D03",
+      "MAX 2 days/每周"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": null,
+    "fault": null
+  },
+  {
+    "id": "C02",
+    "script": "conflict",
+    "question": "差旅费用最晚什么时候报销？",
+    "expected_status": "NEEDS_CLARIFICATION",
+    "checks": [
+      "读取D01/D02",
+      "无日期优先"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": null,
+    "fault": null
+  },
+  {
+    "id": "C03",
+    "script": "missing",
+    "question": "公司今年利润是多少？",
+    "expected_status": "INSUFFICIENT_EVIDENCE",
+    "checks": [
+      "无企业事实臆造"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": null,
+    "fault": null
+  },
+  {
+    "id": "C04",
+    "script": "similar",
+    "question": "正式员工一周在家上班最多能申请几天？",
+    "expected_status": "COMPLETED",
+    "checks": [
+      "D03",
+      "是否改写按真实Trace记录"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": null,
+    "fault": null
+  },
+  {
+    "id": "C05",
+    "script": "context",
+    "question": "那试用期呢？",
+    "expected_status": "COMPLETED",
+    "checks": [
+      "历史定位话题",
+      "读取D04",
+      "不得套用正式额度"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": "examples/context_history.json",
+    "fault": null
+  },
+  {
+    "id": "C06",
+    "script": "failure",
+    "question": "正式员工一周最多远程办公几天？",
+    "expected_status": "COMPLETED",
+    "checks": [
+      "一次失败observation",
+      "恢复后读取"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": null,
+    "fault": "search_docs:once"
+  },
+  {
+    "id": "C06B",
+    "script": "always",
+    "question": "正式员工一周最多远程办公几天？",
+    "expected_status": "FAILED",
+    "checks": [
+      "持续失败",
+      "无伪造成功"
+    ],
+    "as_of": "2026-10-28",
+    "history_file": null,
+    "fault": "search_docs:always"
+  }
+]

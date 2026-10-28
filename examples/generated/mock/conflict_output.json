@@ -1,0 +1,59 @@
+{
+  "status": "NEEDS_CLARIFICATION",
+  "answer": "需要确认适用制度或条件。员工应在差旅结束后30天内提交报销申请。员工应在差旅结束后15天内提交报销申请。",
+  "claims": [
+    {
+      "statement": "员工应在差旅结束后30天内提交报销申请。",
+      "evidence_doc_id": "D01",
+      "evidence_quote": "员工应在差旅结束后30天内提交报销申请。",
+      "rule_id": "D01-R1",
+      "scope": [
+        "all_employees"
+      ],
+      "constraint_type": "DEADLINE",
+      "operator": "<=",
+      "value": 30,
+      "unit": "days",
+      "period": null,
+      "reference_event": "差旅结束后",
+      "conditions": [],
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "statement": "员工应在差旅结束后15天内提交报销申请。",
+      "evidence_doc_id": "D02",
+      "evidence_quote": "员工应在差旅结束后15天内提交报销申请。",
+      "rule_id": "D02-R1",
+      "scope": [
+        "all_employees"
+      ],
+      "constraint_type": "DEADLINE",
+      "operator": "<=",
+      "value": 15,
+      "unit": "days",
+      "period": null,
+      "reference_event": "差旅结束后",
+      "conditions": [],
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    }
+  ],
+  "citations": [
+    {
+      "doc_id": "D01",
+      "quote": "员工应在差旅结束后30天内提交报销申请。"
+    },
+    {
+      "doc_id": "D02",
+      "quote": "员工应在差旅结束后15天内提交报销申请。"
+    }
+  ],
+  "gaps": [
+    "缺少重叠适用条款之间的明确优先或覆盖依据。"
+  ],
+  "conflicts": [
+    "D01 / D02 的适用条款存在冲突"
+  ],
+  "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\conflict_trace.json"
+}

@@ -1,0 +1,16 @@
+{
+  "question": "那试用期呢？",
+  "history": [
+    {
+      "role": "user",
+      "content": "正式员工远程办公有什么规定？"
+    },
+    {
+      "role": "assistant",
+      "content": "上一轮回答仅作话题上下文，本轮须重新读取制度。"
+    }
+  ],
+  "as_of": "2026-10-28",
+  "mode": "mock",
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808"
+}

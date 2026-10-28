@@ -1,0 +1,181 @@
+{
+  "run_id": "9ecc1f49d9694f2c813e7df8cd598097",
+  "mode": "mock",
+  "model": "mock",
+  "requested_model": "mock",
+  "started_at": "2026-10-28T10:24:31.949804+00:00",
+  "input": {
+    "question": "正式员工一周最多远程办公几天？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "mock",
+    "strict_requested": true,
+    "parallel_constraint_requested": null,
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": "search_docs:always"
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "bfbf6449c3c080c381c0af600c10d810cb1ec674860b446f3fd79aa081f3cdf6",
+  "schema_hash": "28696d47c2505b3fac76de53cad3905bb3255cd1bee8df590709e86c7dcc5b21",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 1,
+      "call_id": "n1",
+      "action": "search_docs",
+      "parameters": {
+        "reason": "离线测试动作说明",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "remote_work",
+              "scope": [
+                "regular"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每周",
+              "conditions": [],
+              "facet": "all",
+              "constraint_type": "MAX"
+            }
+          ],
+          "ambiguous": false,
+          "clarification": "",
+          "revision_reason": ""
+        },
+        "query": "正式员工远程办公",
+        "top_k": 5
+      },
+      "raw_arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"facet\": \"all\", \"constraint_type\": \"MAX\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}, \"query\": \"正式员工远程办公\", \"top_k\": 5}",
+      "observation": {
+        "ok": false,
+        "error_type": "INJECTED_FAILURE",
+        "message": "检索工具故障（测试注入）",
+        "retryable": true
+      },
+      "result_summary": "INJECTED_FAILURE: 检索工具故障（测试注入）",
+      "decision_summary": "离线测试动作说明",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.00020170000789221376,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 2,
+      "round": 2,
+      "call_id": "fail",
+      "action": "submit_answer",
+      "parameters": {
+        "reason": "离线测试动作说明",
+        "question_contract": null,
+        "status": "FAILED",
+        "answer": "此自由文本不得直接作为最终答案。",
+        "claims": [],
+        "citations": [],
+        "gaps": [
+          "缺少适用依据"
+        ],
+        "conflicts": []
+      },
+      "raw_arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"status\": \"FAILED\", \"answer\": \"此自由文本不得直接作为最终答案。\", \"claims\": [], \"citations\": [], \"gaps\": [\"缺少适用依据\"], \"conflicts\": []}",
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "FAILED",
+          "answer": "工具异常导致任务失败。",
+          "claims": [],
+          "citations": [],
+          "gaps": [
+            "已观察到工具异常，未获得可接受的恢复结果。"
+          ],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\always_trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：FAILED",
+      "decision_summary": "离线测试动作说明",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0001137000072048977,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.1299998732283711e-05,
+      "model": "mock",
+      "tool_call_count": 1
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.2300006346777081e-05,
+      "model": "mock",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "remote_work",
+          "scope": [
+            "regular"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每周",
+          "conditions": [],
+          "facet": "all",
+          "constraint_type": "MAX"
+        }
+      ],
+      "ambiguous": false,
+      "clarification": "",
+      "revision_reason": ""
+    }
+  ],
+  "counts": {
+    "model_calls": 2,
+    "requested": 2,
+    "attempted": 2,
+    "executed": 2,
+    "skipped": 0
+  },
+  "final": {
+    "status": "FAILED",
+    "answer": "工具异常导致任务失败。",
+    "claims": [],
+    "citations": [],
+    "gaps": [
+      "已观察到工具异常，未获得可接受的恢复结果。"
+    ],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\mock\\always_trace.json"
+  },
+  "elapsed_seconds": 0.002696,
+  "finished_at": "2026-10-28T10:24:31.950302+00:00",
+  "capabilities": {
+    "native_tool_calling": "mock_only",
+    "strict_schema": "mock_only",
+    "parallel_constraint": "mock_only"
+  }
+}

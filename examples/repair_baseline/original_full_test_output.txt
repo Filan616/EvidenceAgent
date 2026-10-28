@@ -1,0 +1,126 @@
+PS D:\Learning\EvidenceAgent> .venv/Scripts/python -X utf8 -m pytest -q --run-live
+..........................................................................FF.....F.FF......................... [ 86%]
+.................                                                                                              [100%]
+===================================================== FAILURES ======================================================
+___________________________________________ test_live_six_scenarios[C04] ____________________________________________
+
+corpus = <src.rules.Corpus object at 0x0000025018F9BD50>
+case = {'id': 'C04', 'script': 'similar', 'question': '正式员工一周在家上班最多能申请几天？', 'expected_status': 'COMPLETED', ...}
+
+    @pytest.mark.parametrize("case", CASES, ids=lambda c: c["id"])
+    def test_live_six_scenarios(corpus, case):
+        history = json.loads((ROOT / case["history_file"]).read_text(encoding="utf-8")) if case["history_file"] else []
+        result, trace, _ = live_run(corpus, case["question"], case["id"], history, case["fault"])
+        if case["id"] == "C06":
+            assert result["status"] in {"COMPLETED", "FAILED"}
+            assert any(not s["ok"] for s in trace["steps"])
+        elif case["id"] == "C06B":
+            assert result["status"] in {"FAILED", "INCOMPLETE"}
+        else:
+>           assert result["status"] == case["expected_status"]
+E           AssertionError: assert 'INCOMPLETE' == 'COMPLETED'
+E             
+E             - COMPLETED
+E             ?         -
+E             + INCOMPLETE
+E             ? ++
+
+tests\test_live.py:42: AssertionError
+___________________________________________ test_live_six_scenarios[C05] ____________________________________________
+
+corpus = <src.rules.Corpus object at 0x0000025019152B50>
+case = {'id': 'C05', 'script': 'context', 'question': '那试用期呢？', 'expected_status': 'COMPLETED', ...}
+
+    @pytest.mark.parametrize("case", CASES, ids=lambda c: c["id"])
+    def test_live_six_scenarios(corpus, case):
+        history = json.loads((ROOT / case["history_file"]).read_text(encoding="utf-8")) if case["history_file"] else []
+        result, trace, _ = live_run(corpus, case["question"], case["id"], history, case["fault"])
+        if case["id"] == "C06":
+            assert result["status"] in {"COMPLETED", "FAILED"}
+            assert any(not s["ok"] for s in trace["steps"])
+        elif case["id"] == "C06B":
+            assert result["status"] in {"FAILED", "INCOMPLETE"}
+        else:
+>           assert result["status"] == case["expected_status"]
+E           AssertionError: assert 'INCOMPLETE' == 'COMPLETED'
+E             
+E             - COMPLETED
+E             ?         -
+E             + INCOMPLETE
+E             ? ++
+
+tests\test_live.py:42: AssertionError
+_____________________________________________ test_live_mutations[T04] ______________________________________________
+
+corpus = <src.rules.Corpus object at 0x00000250191EF450>, variant = 'T04'
+
+    @pytest.mark.parametrize("variant", ["T01", "T02", "T03", "T04", "T05", "T06"])
+    def test_live_mutations(corpus, variant):
+        changed = mutate(corpus, variant)
+        question = "差旅费用最晚什么时候报销？" if variant in {"T03", "T04"} else "正式员工一周最多远程办公几天？"
+        result, trace, _ = live_run(changed, question, variant, fault="search_docs:once" if variant == "T06" else None)
+        if variant in {"T01", "T02"}:
+            assert result["status"] == "COMPLETED"
+            assert any(c["rule_id"] == "D03-R1" and c["value"] == (2 if variant == "T01" else 1) for c in result["claims"])
+        elif variant == "T03":
+            assert result["status"] == "NEEDS_CLARIFICATION" and result["conflicts"]
+        elif variant == "T04":
+>           assert result["status"] == "COMPLETED" and not result["conflicts"]
+E           AssertionError: assert ('NEEDS_CLARIFICATION' == 'COMPLETED'
+E             
+E             - COMPLETED
+E             + NEEDS_CLARIFICATION)
+
+tests\test_live.py:62: AssertionError
+_____________________________________________ test_live_mutations[T06] ______________________________________________
+
+corpus = <src.rules.Corpus object at 0x00000250191EFDD0>, variant = 'T06'
+
+    @pytest.mark.parametrize("variant", ["T01", "T02", "T03", "T04", "T05", "T06"])
+    def test_live_mutations(corpus, variant):
+        changed = mutate(corpus, variant)
+        question = "差旅费用最晚什么时候报销？" if variant in {"T03", "T04"} else "正式员工一周最多远程办公几天？"
+        result, trace, _ = live_run(changed, question, variant, fault="search_docs:once" if variant == "T06" else None)
+        if variant in {"T01", "T02"}:
+            assert result["status"] == "COMPLETED"
+            assert any(c["rule_id"] == "D03-R1" and c["value"] == (2 if variant == "T01" else 1) for c in result["claims"])
+        elif variant == "T03":
+            assert result["status"] == "NEEDS_CLARIFICATION" and result["conflicts"]
+        elif variant == "T04":
+            assert result["status"] == "COMPLETED" and not result["conflicts"]
+        elif variant == "T05":
+            assert result["status"] == "INSUFFICIENT_EVIDENCE"
+            assert not {"D03", "D04"} & {c["doc_id"] for c in result["citations"]}
+        else:
+            assert any(s["observation"].get("error_type") == "INJECTED_FAILURE" for s in trace["steps"])
+>           assert result["status"] in {"COMPLETED", "FAILED"}
+E           AssertionError: assert 'INCOMPLETE' in {'COMPLETED', 'FAILED'}
+
+tests\test_live.py:68: AssertionError
+______________________________________ test_live_observation_changes_decision _______________________________________
+
+corpus = <src.rules.Corpus object at 0x00000250191F99D0>
+
+    def test_live_observation_changes_decision(corpus):
+        question = "正式员工一周最多远程办公几天？"
+        normal, normal_trace, directory_a = live_run(corpus, question, "dynamic_normal")
+        changed, changed_trace, directory_b = live_run(corpus, question, "dynamic_fault", fault="search_docs:once")
+        comparison = compare_decisions(normal_trace, changed_trace)
+        comparison.update({"normal_trace": str(directory_a / "trace.json"), "changed_trace": str(directory_b / "trace.json")})
+        write_json(directory_b / "comparison.json", comparison)
+>       assert normal["status"] == "COMPLETED"
+E       AssertionError: assert 'INCOMPLETE' == 'COMPLETED'
+E         
+E         - COMPLETED
+E         ?         -
+E         + INCOMPLETE
+E         ? ++
+
+tests\test_live.py:78: AssertionError
+============================================== short test summary info ==============================================
+FAILED tests/test_live.py::test_live_six_scenarios[C04] - AssertionError: assert 'INCOMPLETE' == 'COMPLETED'
+FAILED tests/test_live.py::test_live_six_scenarios[C05] - AssertionError: assert 'INCOMPLETE' == 'COMPLETED'
+FAILED tests/test_live.py::test_live_mutations[T04] - AssertionError: assert ('NEEDS_CLARIFICATION' == 'COMPLETED'
+FAILED tests/test_live.py::test_live_mutations[T06] - AssertionError: assert 'INCOMPLETE' in {'COMPLETED', 'FAILED'}
+FAILED tests/test_live.py::test_live_observation_changes_decision - AssertionError: assert 'INCOMPLETE' == 'COMPLETED'
+5 failed, 122 passed in 159.50s (0:02:39)

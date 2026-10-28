@@ -1,0 +1,1017 @@
+{
+  "run_id": "bcd9f45c24014eaebc9d95e596daf681",
+  "mode": "live",
+  "model": "deepseek-flash",
+  "requested_model": "deepseek-flash",
+  "started_at": "2026-10-28T11:46:56.435345+00:00",
+  "input": {
+    "question": "公司今年利润是多少？",
+    "history": []
+  },
+  "config": {
+    "provider_host": "api.deepseek.com",
+    "reasoning_effort": "none",
+    "strict_requested": false,
+    "parallel_constraint_requested": false,
+    "evaluation": "C03",
+    "evaluation_batch": "20261028T114641Z_ace5d168",
+    "as_of": "2026-10-28",
+    "max_steps": 8,
+    "max_tool_calls": 10,
+    "fault": null
+  },
+  "corpus_hash": "806e60a6ef805febd2a3324218ed5d82997631db598ca566b42b0a7899e9f808",
+  "prompt_hash": "4ec5903ae033b94e4a78f4393af87fd44dc4daf99122784cb27279cc6d46cc02",
+  "schema_hash": "1900f26da5090c9ee5aeb2dcd2a9c4cdff91272461a7c9504589005f136a7cc0",
+  "versions": {
+    "python": "3.13.14",
+    "openai": "2.54.0",
+    "python-dotenv": "1.2.4",
+    "jsonschema": "4.26.0",
+    "pytest": "9.2.0"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "round": 2,
+      "call_id": "call_00_dV4Fp8h8bgI9UJawL9lt7629",
+      "action": "search_docs",
+      "parameters": {
+        "query": "公司利润 年度利润",
+        "top_k": 10,
+        "reason": "用户询问公司今年利润，属于财务数据，需检索知识库是否有相关规则或数据。",
+        "question_contract": {
+          "requirements": [
+            {
+              "rule_group": "unknown",
+              "scope": [
+                "all_employees"
+              ],
+              "as_of": "2026-10-28",
+              "reference_event": null,
+              "period": "每年",
+              "conditions": [],
+              "constraint_type": null,
+              "facet": "all"
+            }
+          ],
+          "ambiguous": true,
+          "clarification": "问题涉及公司财务利润，不属于已知制度规则组，先检索确认是否有相关文档。",
+          "revision_reason": ""
+        }
+      },
+      "raw_arguments": "{\"query\": \"公司利润 年度利润\", \"top_k\": 10, \"reason\": \"用户询问公司今年利润，属于财务数据，需检索知识库是否有相关规则或数据。\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"unknown\", \"scope\": [\"all_employees\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每年\", \"conditions\": [], \"constraint_type\": null, \"facet\": \"all\"}], \"ambiguous\": true, \"clarification\": \"问题涉及公司财务利润，不属于已知制度规则组，先检索确认是否有相关文档。\", \"revision_reason\": \"\"}}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "用户询问公司今年利润，属于财务数据，需检索知识库是否有相关规则或数据。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0008010000019567087,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 2,
+      "round": 3,
+      "call_id": "call_00_O9BD2So0vYbueuHUzQbT6624",
+      "action": "search_docs",
+      "parameters": {
+        "query": "财务 业绩 经营数据 收入 利润 年报",
+        "top_k": 10,
+        "reason": "换用更宽泛关键词再次检索财务经营数据，确认知识库是否覆盖。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"财务 业绩 经营数据 收入 利润 年报\", \"top_k\": 10, \"reason\": \"换用更宽泛关键词再次检索财务经营数据，确认知识库是否覆盖。\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "results": []
+      },
+      "result_summary": "无命中",
+      "decision_summary": "换用更宽泛关键词再次检索财务经营数据，确认知识库是否覆盖。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.00034240000240970403,
+      "next_action": "search_docs"
+    },
+    {
+      "step": 3,
+      "round": 4,
+      "call_id": "call_00_9BUlwPxsYVbDCLCG6r7x0625",
+      "action": "search_docs",
+      "parameters": {
+        "query": "财务制度 报销 规定",
+        "top_k": 10,
+        "reason": "最后探测知识库整体文档覆盖范围，判断是否为财务口径无关文档。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"query\": \"财务制度 报销 规定\", \"top_k\": 10, \"reason\": \"最后探测知识库整体文档覆盖范围，判断是否为财务口径无关文档。\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "results": [
+          {
+            "doc_id": "D01",
+            "title": "差旅报销制度 A",
+            "version_date": "2026-01-01",
+            "score": 0.169064,
+            "snippet": "员工应在差旅结束后30天内提交报销申请。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D02",
+            "title": "差旅报销制度 B",
+            "version_date": "2026-02-01",
+            "score": 0.169064,
+            "snippet": "员工应在差旅结束后15天内提交报销申请。本资料为合成制度，仅用于项目测试。"
+          },
+          {
+            "doc_id": "D06",
+            "title": "报销票据要求",
+            "version_date": "2026-06-01",
+            "score": 0.135265,
+            "snippet": "员工办理差旅报销需提交有效票据。本资料为合成制度，仅用于项目测试。"
+          }
+        ]
+      },
+      "result_summary": "命中 D01,D02,D06",
+      "decision_summary": "最后探测知识库整体文档覆盖范围，判断是否为财务口径无关文档。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0002018999948631972,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 4,
+      "round": 5,
+      "call_id": "call_00_s4qIizmLXRKNF5NT68oy6109",
+      "action": "submit_answer",
+      "parameters": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "answer": "知识库仅收录差旅报销、票据等企业内部制度类文档，未收录公司财务利润数据或相关披露文件，因此无法据此回答“公司今年利润是多少”。如需该数据，请查阅正式财务报告或询问财务部门。",
+        "citations": [],
+        "claims": [],
+        "gaps": [
+          "知识库中没有任何涉及公司收入、成本、利润等财务经营数据的文档，无法确定2026年度（或任何年度）的公司利润。"
+        ],
+        "conflicts": [],
+        "reason": "两轮财务相关检索均无结果，仅检索到差旅报销与票据类制度文档，无利润数据可引用。",
+        "question_contract": null
+      },
+      "raw_arguments": "{\"status\": \"INSUFFICIENT_EVIDENCE\", \"answer\": \"知识库仅收录差旅报销、票据等企业内部制度类文档，未收录公司财务利润数据或相关披露文件，因此无法据此回答“公司今年利润是多少”。如需该数据，请查阅正式财务报告或询问财务部门。\", \"citations\": [], \"claims\": [], \"gaps\": [\"知识库中没有任何涉及公司收入、成本、利润等财务经营数据的文档，无法确定2026年度（或任何年度）的公司利润。\"], \"conflicts\": [], \"reason\": \"两轮财务相关检索均无结果，仅检索到差旅报销与票据类制度文档，无利润数据可引用。\", \"question_contract\": null}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": false,
+        "error_type": "VALIDATION_ERROR",
+        "message": "终稿未通过校验，请根据缺口自行查证或修正",
+        "retryable": false,
+        "details": [
+          "意图不明确或制度冲突应请求澄清"
+        ],
+        "related_doc_ids": [],
+        "field_errors": [
+          {
+            "error_type": "UNRESOLVED_MODEL_AMBIGUITY",
+            "field": "question_contract.ambiguous",
+            "actual": true,
+            "expected_semantics": "是否存在会改变答案且未能由已读证据解决的适用歧义",
+            "allowed_corrections": [
+              "若已读规则覆盖全部员工且结论一致，可说明原因修订ambiguous=false",
+              "若仍影响答案，请求用户澄清"
+            ],
+            "constraint_source": "model"
+          }
+        ],
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts": true
+        }
+      },
+      "result_summary": "VALIDATION_ERROR: 终稿未通过校验，请根据缺口自行查证或修正",
+      "decision_summary": "两轮财务相关检索均无结果，仅检索到差旅报销与票据类制度文档，无利润数据可引用。",
+      "ok": false,
+      "executed": true,
+      "elapsed_seconds": 0.0004011999990325421,
+      "next_action": "submit_answer"
+    },
+    {
+      "step": 5,
+      "round": 6,
+      "call_id": "call_00_G4GQhTAkRcvdcw3Sv9Qs3834",
+      "action": "submit_answer",
+      "parameters": {
+        "answer": "知识库中只收录差旅报销、报销票据等企业内部制度类文档，没有收录公司收入、成本、利润等财务经营数据，因此无法据此回答“公司今年利润是多少”。该问题也不属于本问答 Agent 可依据的企业制度规则组；如需该数据，请查阅正式财务报告或咨询财务部门。",
+        "citations": [],
+        "claims": [],
+        "conflicts": [],
+        "gaps": [
+          "知识库中没有涉及公司收入、成本、利润等财务经营数据的文档，无法确定 2026 年（或任何年度）的公司利润。",
+          "用户问题不落在差旅报销、远程办公、年假、报销票据、信息安全等制度规则组内，缺少可用的规则依据。"
+        ],
+        "question_contract": {
+          "ambiguous": false,
+          "clarification": "",
+          "requirements": [
+            {
+              "as_of": "2026-10-28",
+              "conditions": [],
+              "constraint_type": null,
+              "facet": "all",
+              "period": "每年",
+              "reference_event": null,
+              "rule_group": "unknown",
+              "scope": [
+                "all_employees"
+              ]
+            }
+          ],
+          "revision_reason": "检索结果显示知识库仅含差旅报销等制度文档，无财务利润数据，该问题在现有制度规则组下无适用歧义，故将 ambiguous 修订为 false。"
+        },
+        "reason": "两轮财务关键词检索无结果，仅检索到差旅报销与票据类制度文档，无利润数据可引用。",
+        "status": "INSUFFICIENT_EVIDENCE"
+      },
+      "raw_arguments": "{\"answer\": \"知识库中只收录差旅报销、报销票据等企业内部制度类文档，没有收录公司收入、成本、利润等财务经营数据，因此无法据此回答“公司今年利润是多少”。该问题也不属于本问答 Agent 可依据的企业制度规则组；如需该数据，请查阅正式财务报告或咨询财务部门。\", \"citations\": [], \"claims\": [], \"conflicts\": [], \"gaps\": [\"知识库中没有涉及公司收入、成本、利润等财务经营数据的文档，无法确定 2026 年（或任何年度）的公司利润。\", \"用户问题不落在差旅报销、远程办公、年假、报销票据、信息安全等制度规则组内，缺少可用的规则依据。\"], \"question_contract\": {\"ambiguous\": false, \"clarification\": \"\", \"requirements\": [{\"as_of\": \"2026-10-28\", \"conditions\": [], \"constraint_type\": null, \"facet\": \"all\", \"period\": \"每年\", \"reference_event\": null, \"rule_group\": \"unknown\", \"scope\": [\"all_employees\"]}], \"revision_reason\": \"检索结果显示知识库仅含差旅报销等制度文档，无财务利润数据，该问题在现有制度规则组下无适用歧义，故将 ambiguous 修订为 false。\"}, \"reason\": \"两轮财务关键词检索无结果，仅检索到差旅报销与票据类制度文档，无利润数据可引用。\", \"status\": \"INSUFFICIENT_EVIDENCE\"}",
+      "normalization": [],
+      "constraint_provenance": [
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ],
+      "observation": {
+        "ok": true,
+        "result": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "answer": "现有资料不足以回答该问题。",
+          "claims": [],
+          "citations": [],
+          "gaps": [
+            "已成功检索，但尚无足够的有效证据覆盖问题。"
+          ],
+          "conflicts": [],
+          "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C03_bcd9f45c24014eaebc9d95e596daf681\\trace.json"
+        },
+        "checks": {
+          "facts": true,
+          "coverage": false,
+          "conflicts_resolved": true
+        }
+      },
+      "result_summary": "提交通过：INSUFFICIENT_EVIDENCE",
+      "decision_summary": "两轮财务关键词检索无结果，仅检索到差旅报销与票据类制度文档，无利润数据可引用。",
+      "ok": true,
+      "executed": true,
+      "elapsed_seconds": 0.0008061999978963286,
+      "next_action": null
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "elapsed_seconds": 1.3121141000010539,
+      "model": "deepseek-flash",
+      "tool_call_count": 0
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "elapsed_seconds": 1.2460413000080734,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "elapsed_seconds": 1.132791099997121,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 4,
+      "ok": true,
+      "elapsed_seconds": 1.0233255000057397,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 5,
+      "ok": true,
+      "elapsed_seconds": 1.867320799996378,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    },
+    {
+      "round": 6,
+      "ok": true,
+      "elapsed_seconds": 3.037371999991592,
+      "model": "deepseek-flash",
+      "tool_call_count": 1
+    }
+  ],
+  "question_revisions": [
+    {
+      "requirements": [
+        {
+          "rule_group": "unknown",
+          "scope": [
+            "all_employees"
+          ],
+          "as_of": "2026-10-28",
+          "reference_event": null,
+          "period": "每年",
+          "conditions": [],
+          "constraint_type": null,
+          "facet": "all"
+        }
+      ],
+      "ambiguous": true,
+      "clarification": "问题涉及公司财务利润，不属于已知制度规则组，先检索确认是否有相关文档。",
+      "revision_reason": ""
+    },
+    {
+      "ambiguous": false,
+      "clarification": "",
+      "requirements": [
+        {
+          "as_of": "2026-10-28",
+          "conditions": [],
+          "constraint_type": null,
+          "facet": "all",
+          "period": "每年",
+          "reference_event": null,
+          "rule_group": "unknown",
+          "scope": [
+            "all_employees"
+          ]
+        }
+      ],
+      "revision_reason": "检索结果显示知识库仅含差旅报销等制度文档，无财务利润数据，该问题在现有制度规则组下无适用歧义，故将 ambiguous 修订为 false。"
+    }
+  ],
+  "counts": {
+    "model_calls": 6,
+    "requested": 5,
+    "attempted": 5,
+    "executed": 5,
+    "skipped": 0
+  },
+  "final": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "现有资料不足以回答该问题。",
+    "claims": [],
+    "citations": [],
+    "gaps": [
+      "已成功检索，但尚无足够的有效证据覆盖问题。"
+    ],
+    "conflicts": [],
+    "trace_path": "D:\\Learning\\EvidenceAgent\\examples\\generated\\live\\C03_bcd9f45c24014eaebc9d95e596daf681\\trace.json"
+  },
+  "elapsed_seconds": 9.624258,
+  "finished_at": "2026-10-28T11:47:06.057296+00:00",
+  "capabilities": {
+    "native_tool_calling": "observed",
+    "strict_schema": "disabled_explicitly",
+    "parallel_constraint": "disabled_explicitly"
+  },
+  "contract_attempts": [
+    {
+      "raw": {
+        "requirements": [
+          {
+            "rule_group": "unknown",
+            "scope": [
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每年",
+            "conditions": [],
+            "constraint_type": null,
+            "facet": "all"
+          }
+        ],
+        "ambiguous": true,
+        "clarification": "问题涉及公司财务利润，不属于已知制度规则组，先检索确认是否有相关文档。",
+        "revision_reason": ""
+      },
+      "normalized": {
+        "requirements": [
+          {
+            "rule_group": "unknown",
+            "scope": [
+              "all_employees"
+            ],
+            "as_of": "2026-10-28",
+            "reference_event": null,
+            "period": "每年",
+            "conditions": [],
+            "constraint_type": null,
+            "facet": "all"
+          }
+        ],
+        "ambiguous": true,
+        "clarification": "问题涉及公司财务利润，不属于已知制度规则组，先检索确认是否有相关文档。",
+        "revision_reason": ""
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": true,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    },
+    {
+      "raw": {
+        "ambiguous": false,
+        "clarification": "",
+        "requirements": [
+          {
+            "as_of": "2026-10-28",
+            "conditions": [],
+            "constraint_type": null,
+            "facet": "all",
+            "period": "每年",
+            "reference_event": null,
+            "rule_group": "unknown",
+            "scope": [
+              "all_employees"
+            ]
+          }
+        ],
+        "revision_reason": "检索结果显示知识库仅含差旅报销等制度文档，无财务利润数据，该问题在现有制度规则组下无适用歧义，故将 ambiguous 修订为 false。"
+      },
+      "normalized": {
+        "ambiguous": false,
+        "clarification": "",
+        "requirements": [
+          {
+            "as_of": "2026-10-28",
+            "conditions": [],
+            "constraint_type": null,
+            "facet": "all",
+            "period": "每年",
+            "reference_event": null,
+            "rule_group": "unknown",
+            "scope": [
+              "all_employees"
+            ]
+          }
+        ],
+        "revision_reason": "检索结果显示知识库仅含差旅报销等制度文档，无财务利润数据，该问题在现有制度规则组下无适用歧义，故将 ambiguous 修订为 false。"
+      },
+      "accepted": true,
+      "normalization": [],
+      "field_errors": [],
+      "provenance": [
+        {
+          "field": "requirements.0.as_of",
+          "value": "2026-10-28",
+          "source": [
+            "runtime"
+          ],
+          "evidence": [
+            "--as-of"
+          ],
+          "protected": true
+        },
+        {
+          "field": "requirements.0.constraint_type",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.facet",
+          "value": "all",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.period",
+          "value": "每年",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.reference_event",
+          "value": null,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.rule_group",
+          "value": "unknown",
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "requirements.0.scope",
+          "value": [
+            "all_employees"
+          ],
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        },
+        {
+          "field": "ambiguous",
+          "value": false,
+          "source": [
+            "model"
+          ],
+          "evidence": [],
+          "protected": false
+        }
+      ]
+    }
+  ],
+  "protected_constraints": [
+    {
+      "field": "as_of",
+      "value": "2026-10-28",
+      "source": "runtime",
+      "evidence": "--as-of",
+      "protected": true
+    }
+  ]
+}

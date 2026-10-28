@@ -1,0 +1,62 @@
+{
+  "mode": "mock",
+  "description": "预设回放，仅验证执行器；不证明模型能力",
+  "responses": [
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "n1",
+          "type": "function",
+          "function": {
+            "name": "search_docs",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": {\"requirements\": [{\"rule_group\": \"remote_work\", \"scope\": [\"regular\"], \"as_of\": \"2026-10-28\", \"reference_event\": null, \"period\": \"每周\", \"conditions\": [], \"facet\": \"all\", \"constraint_type\": \"MAX\"}], \"ambiguous\": false, \"clarification\": \"\", \"revision_reason\": \"\"}, \"query\": \"正式员工远程办公\", \"top_k\": 5}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "retry",
+          "type": "function",
+          "function": {
+            "name": "search_docs",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"query\": \"正式员工远程办公\", \"top_k\": 5}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "n2",
+          "type": "function",
+          "function": {
+            "name": "read_doc",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"doc_id\": \"D03\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "n3",
+          "type": "function",
+          "function": {
+            "name": "submit_answer",
+            "arguments": "{\"reason\": \"离线测试动作说明\", \"question_contract\": null, \"status\": \"COMPLETED\", \"answer\": \"此自由文本不得直接作为最终答案。\", \"claims\": [{\"statement\": \"正式员工每周最多可以申请2天远程办公。\", \"evidence_doc_id\": \"D03\", \"evidence_quote\": \"正式员工每周最多可以申请2天远程办公。\", \"rule_id\": \"D03-R1\", \"scope\": [\"regular\"], \"constraint_type\": \"MAX\", \"operator\": \"<=\", \"value\": 2, \"unit\": \"days\", \"period\": \"每周\", \"reference_event\": null, \"conditions\": [], \"effective_from\": \"2026-01-01\", \"effective_to\": null}], \"citations\": [{\"doc_id\": \"D03\", \"quote\": \"正式员工每周最多可以申请2天远程办公。\"}], \"gaps\": [], \"conflicts\": []}"
+          }
+        }
+      ]
+    }
+  ]
+}
